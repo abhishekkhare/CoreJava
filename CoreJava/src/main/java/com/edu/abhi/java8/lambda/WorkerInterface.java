@@ -1,4 +1,4 @@
-package com.edu.abhi.lambda;
+package com.edu.abhi.java8.lambda;
 
 @FunctionalInterface
 public interface WorkerInterface {
