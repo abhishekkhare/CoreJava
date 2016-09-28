@@ -1,0 +1,16 @@
+
+Strategy Design (Add Fly as an instance variable to animal rather than adding it as a method)
+- if you need to dynamically change an algorithm used by an object at run time.
+- You never add any method to your superclass if they do not pertain to any subclasses.
+-  always prefer composition over inheritance as it allows you to change the behavior of a class at runtime.
+
+
+Builder Design Pattern
+- You use the builder design pattern when you want to have many classes help in the creation of an object. By having different classes build the object you can then easily create many different types of objects without being forced to rewrite code.
+- Decouple an abstraction from its implementation so that the two can vary independently
+
+Prototype Design Pattern
+- The Prototype design pattern is used for creating new objects (instances) by cloning (copying) other objects. It allows for the adding of any subclass instance of a known super class at run time. It is used when there are numerous potential classes that you want to only use if needed at runtime. The major benefit of using the Prototype pattern is that it reduces the need for creating potentially unneeded subclasses.
+- Prototype pattern is used when the Object creation is a costly affair and requires a lot of time and resources and you have a similar object already existing. So this pattern provides a mechanism to copy the original object to a new object and then modify it according to our needs. This pattern uses java cloning to copy the object.
+- 
+ 
