@@ -37,7 +37,6 @@ public class DeadLockDemo {
 
 	public static void main(String[] args) {
 		Runnable r1 = new Runnable() {
-
 			@Override
 			public void run() {
 				DeadLockDemo dd = new DeadLockDemo();
@@ -45,7 +44,6 @@ public class DeadLockDemo {
 			}
 		};
 		Runnable r2 = new Runnable() {
-
 			@Override
 			public void run() {
 				DeadLockDemo dd = new DeadLockDemo();

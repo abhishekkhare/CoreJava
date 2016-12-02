@@ -23,6 +23,7 @@ package com.edu.abhi.threads;
  */
 public class DaemonThreadExample {
 
+	@SuppressWarnings("static-access")
 	public static void main(String args[]) {
 		System.out.println("START THE TEST");
 		Thread daemonThread = new Thread(new Runnable() {
@@ -43,7 +44,7 @@ public class DaemonThreadExample {
 				} catch (Exception e) {
 					e.printStackTrace();
 				} finally {
-					System.out.println("Daemon Thread exiting"); // never called
+					System.out.println("Daemon Thread exiting");//Never Called
 				}
 			}
 		}, "Daemon-Thread");
@@ -66,8 +67,7 @@ public class DaemonThreadExample {
 				} catch (Exception e) {
 					e.printStackTrace();
 				} finally {
-					System.out.println("Non Daemon Thread exiting"); // never
-																		// called
+					System.out.println("Non Daemon Thread exiting"); 
 				}
 			}
 		}, "Daemon-Thread");
@@ -75,11 +75,12 @@ public class DaemonThreadExample {
 		daemonThread.setDaemon(true); // making this thread daemon
 		daemonThread.start();
 		nonDaemonThread.start();
+		System.out.println("Both Threads have started");
 		try {
 			Thread.currentThread().sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println("********* Going to terminate JVM ********");
+		System.out.println("********* Going to terminate Notice the Finally of daemon thread is never called ********");
 	}
 }
