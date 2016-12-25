@@ -16,7 +16,7 @@ public class FutureDemo {
 		System.out.println("Task is submitted");
 		while (!future.isDone()) {
 			System.out.println("Task is not completed yet....");
-			Thread.sleep(1); // sleep for 1 millisecond before checking again
+			Thread.sleep(10); // sleep for 1 millisecond before checking again
 		}
 		System.out.println("Task is completed, let's check result");
 		long factorial = (long) future.get();
@@ -36,6 +36,7 @@ public class FutureDemo {
 			long output = 0;
 			try {
 				output = factorial(number);
+				Thread.sleep(1000);
 			} catch (InterruptedException ex) {
 				ex.printStackTrace();
 			}

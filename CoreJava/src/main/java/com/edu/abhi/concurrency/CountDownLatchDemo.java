@@ -7,7 +7,7 @@ import java.util.concurrent.CountDownLatch;
  * is useful if you want to start main processing thread once its dependency is
  * completed as illustrated in this CountDownLatch Example
  * 
- * @author Javin Paul
+ * @author abhishekkhare
  */
 public class CountDownLatchDemo {
 

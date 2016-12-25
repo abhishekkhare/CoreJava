@@ -1,4 +1,4 @@
-package com.edu.abhi.threads.executor;
+package com.edu.abhi.concurrency.executors;
 
 public class TaskPrint implements Runnable {
 	private final String name;

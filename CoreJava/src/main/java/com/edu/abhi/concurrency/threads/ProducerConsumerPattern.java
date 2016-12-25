@@ -1,4 +1,4 @@
-package com.edu.abhi.threads;
+package com.edu.abhi.concurrency.threads;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;

@@ -1,4 +1,4 @@
-package com.edu.abhi.threads;
+package com.edu.abhi.concurrency.threads;
 
 /**
  * Sample Java class to illustrate How to join two threads in Java.

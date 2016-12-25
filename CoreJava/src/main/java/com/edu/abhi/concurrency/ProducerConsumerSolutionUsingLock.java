@@ -15,8 +15,8 @@ public class ProducerConsumerSolutionUsingLock {
 																		// and
 																		// consumer
 																		// threads
-		Producer p = new Producer(sharedObject);
-		Consumer c = new Consumer(sharedObject); // starting producer and
+		Producer1 p = new Producer1(sharedObject);
+		Consumer1 c = new Consumer1(sharedObject); // starting producer and
 													// consumer threads
 		p.start();
 		c.start();
@@ -82,10 +82,10 @@ class ProducerConsumerImpl { // producer consumer problem data
 	}
 }
 
-class Producer extends Thread {
+class Producer1 extends Thread {
 	ProducerConsumerImpl pc;
 
-	public Producer(ProducerConsumerImpl sharedObject) {
+	public Producer1(ProducerConsumerImpl sharedObject) {
 		super("PRODUCER");
 		this.pc = sharedObject;
 	}
@@ -100,10 +100,10 @@ class Producer extends Thread {
 	}
 }
 
-class Consumer extends Thread {
+class Consumer1 extends Thread {
 	ProducerConsumerImpl pc;
 
-	public Consumer(ProducerConsumerImpl sharedObject) {
+	public Consumer1(ProducerConsumerImpl sharedObject) {
 		super("CONSUMER");
 		this.pc = sharedObject;
 	}

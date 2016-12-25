@@ -1,4 +1,4 @@
-package com.edu.abhi.threads;
+package com.edu.abhi.concurrency.threads;
 
 public class CrunchifyDaemonThread extends Thread {
 	public static void main(String[] args) {

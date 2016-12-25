@@ -7,7 +7,7 @@ import java.util.concurrent.CyclicBarrier;
  * Java program to demonstrate how to use CyclicBarrier in Java. CyclicBarrier
  * is a new Concurrency Utility added in Java 5 Concurrent package.
  * 
- * @author Javin Paul
+ * @author abhishekkhare
  */
 public class CyclicBarrierExample {
 

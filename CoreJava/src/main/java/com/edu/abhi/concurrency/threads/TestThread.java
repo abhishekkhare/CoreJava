@@ -1,4 +1,4 @@
-package com.edu.abhi.threads;
+package com.edu.abhi.concurrency.threads;
 
 class ThreadDemo1 extends Thread {
 	private Thread t;
