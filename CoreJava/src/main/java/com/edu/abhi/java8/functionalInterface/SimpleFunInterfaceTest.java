@@ -1,4 +1,4 @@
-package com.edu.abhi.java8.defaultmethod;
+package com.edu.abhi.java8.functionalInterface;
 
 /**
  * 
@@ -16,6 +16,7 @@ public class SimpleFunInterfaceTest {
 		});
 		
 		carryOutWork(() -> System.out.println("Do work in lambda exp impl..."));
+		
 		System.out.println("*******************************");
 		carryOutWork(new ComplexFunctionalInterface(){
 			@Override

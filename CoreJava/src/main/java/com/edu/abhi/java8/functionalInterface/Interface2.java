@@ -1,4 +1,4 @@
-package com.edu.abhi.java8.defaultmethod;
+package com.edu.abhi.java8.functionalInterface;
 
 @FunctionalInterface
 public interface Interface2 {
