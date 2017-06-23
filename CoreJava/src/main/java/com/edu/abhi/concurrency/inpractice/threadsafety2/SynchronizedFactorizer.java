@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicReference;
 
-import com.edu.abhi.concurrency.inpractice.GuardedBy;
+import com.edu.abhi.concurrency.inpractice.annotations.GuardedBy;
 
 public class SynchronizedFactorizer implements Runnable{
 

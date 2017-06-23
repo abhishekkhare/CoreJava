@@ -1,4 +1,4 @@
-package com.edu.abhi.concurrency.threads;
+package com.edu.abhi.concurrency.threads.threadsignaling;
 
 public class TestSleepWithLock {
 	public void method1() {

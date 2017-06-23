@@ -14,10 +14,10 @@ public class MergesortTest{
 		      numbers[i] = generator.nextInt(MAX);
 		    }
 		    
-		    Mergesort sorter = new Mergesort(numbers);
-		    sorter.printHorzArrayBig(numbers.length, -1);
-		    sorter.sort();
-		    sorter.printHorzArrayBig(numbers.length, -1);
+//		    MergeSort sorter = new MergeSort(numbers);
+//		    sorter.printHorzArrayBig(numbers.length, -1);
+//		    sorter.sort();
+//		    sorter.printHorzArrayBig(numbers.length, -1);
 	  }
 	  
 	 

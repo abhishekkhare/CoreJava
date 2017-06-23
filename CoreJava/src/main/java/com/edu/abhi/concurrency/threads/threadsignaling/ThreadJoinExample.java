@@ -1,4 +1,4 @@
-package com.edu.abhi.concurrency.threads;
+package com.edu.abhi.concurrency.threads.threadsignaling;
 
 public class ThreadJoinExample {
 	public static void main(String[] args) {

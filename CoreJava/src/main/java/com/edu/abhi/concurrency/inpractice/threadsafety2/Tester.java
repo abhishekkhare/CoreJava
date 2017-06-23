@@ -1,7 +1,7 @@
 package com.edu.abhi.concurrency.inpractice.threadsafety2;
 
-import com.edu.abhi.concurrency.inpractice.NotTheadSafe;
-import com.edu.abhi.concurrency.inpractice.ThreadSafe;
+import com.edu.abhi.concurrency.inpractice.annotations.NotThreadSafe;
+import com.edu.abhi.concurrency.inpractice.annotations.ThreadSafe;
 
 public class Tester {
 
@@ -50,7 +50,7 @@ public class Tester {
 		
 	}
 
-	@NotTheadSafe
+	@NotThreadSafe
 	private static void testUnsafeCachingFactorizer() throws InterruptedException {
 		UnsafeCachingFactorizer object = new UnsafeCachingFactorizer();
 		new Thread(new Runnable() {
@@ -76,7 +76,7 @@ public class Tester {
 	}
 
 
-	@NotTheadSafe
+	@NotThreadSafe
 	private static void testLazyInitRace() throws InterruptedException {
 		LazyInitRace object = new LazyInitRace();
 		for (int i = 1; i <= 10; i++) {
@@ -87,7 +87,7 @@ public class Tester {
 		
 	}
 
-	@NotTheadSafe
+	@NotThreadSafe
 	private static void testUnsafeCountingFactorizer() throws InterruptedException {
 		UnsafeCountingFactorizer object = new UnsafeCountingFactorizer();
 		for (int i = 1; i <= 100; i++) {

@@ -1,0 +1,5 @@
+package com.edu.abhi.concurrency.inpractice.annotations;
+
+public @interface ThreadSafe {
+
+}

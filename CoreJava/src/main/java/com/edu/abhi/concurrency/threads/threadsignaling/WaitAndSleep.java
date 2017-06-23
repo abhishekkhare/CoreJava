@@ -1,4 +1,4 @@
-package com.edu.abhi.concurrency.threads;
+package com.edu.abhi.concurrency.threads.threadsignaling;
 
 /**
  * @author abhishekkhare
