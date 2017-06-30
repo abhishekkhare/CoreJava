@@ -49,6 +49,7 @@ class ConsumerA implements Runnable{
 
     public void run() {
         try {
+        	System.out.println(queue.element());
             System.out.println(queue.take());
             System.out.println(queue.take());
             System.out.println(queue.take());
