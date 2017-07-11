@@ -1,4 +1,4 @@
-package com.edu.abhi.concurrency;
+package com.edu.abhi.concurrency.threads.concurrent;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

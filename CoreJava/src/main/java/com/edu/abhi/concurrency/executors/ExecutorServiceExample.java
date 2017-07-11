@@ -36,10 +36,10 @@ import java.util.concurrent.Future;
 public class ExecutorServiceExample {
 
 	public static void main(String args[]) throws InterruptedException, ExecutionException {
-		// execute();
-		// submit();
-		// submitC();
-		// invokeAny();
+		 //execute();
+		 //submit();//Submit Runnable
+		//submitC();//Submit Callable
+		//invokeAny();
 		invokeAll();
 
 	}
@@ -112,7 +112,7 @@ public class ExecutorServiceExample {
 		} catch (ExecutionException e) {
 			e.printStackTrace();
 		}
-		System.out.println(result);
+		System.out.println("RESULT:::"+result);
 		System.out.println("DONE DONE DONE");
 		service.shutdown();
 	}
@@ -130,7 +130,7 @@ public class ExecutorServiceExample {
 	 */
 	private static void submitC() throws InterruptedException {
 		ExecutorService service = Executors.newFixedThreadPool(10);
-		Future[] futures = new Future[100];
+		Future<?>[] futures = new Future<?>[100];
 		for (int i = 0; i < 100; i++) {
 			System.out.println("Submitting task " + i);
 			futures[i] = service.submit(new CallableTask(i));
@@ -167,7 +167,7 @@ public class ExecutorServiceExample {
 	 */
 	private static void submit() throws InterruptedException {
 		ExecutorService service = Executors.newFixedThreadPool(10);
-		Future[] futures = new Future[100];
+		Future<?>[] futures = new Future<?>[100];
 		for (int i = 0; i < 100; i++) {
 			System.out.println("Submitting task " + i);
 			futures[i] = service.submit(new Task(i));
@@ -196,6 +196,7 @@ public class ExecutorServiceExample {
 	 * @throws InterruptedException
 	 */
 	private static void execute() throws InterruptedException {
+		//ExecutorService service = Executors.newSingleThreadExecutor();
 		ExecutorService service = Executors.newFixedThreadPool(10);
 		for (int i = 0; i < 100; i++) {
 			System.out.println("Submitting task " + i);
@@ -236,11 +237,11 @@ final class CallableTask implements Callable<String> {
 	@Override
 	public String call() throws Exception {
 		System.out.println("Task ID : " + this.taskId + " performed by " + Thread.currentThread().getName());
-		// try {
-		// Thread.sleep(100);
-		// } catch (InterruptedException e) {
-		// e.printStackTrace();
-		// }
+		try {
+			Thread.sleep(10);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		if (this.taskId == 97)
 			throw new RuntimeException("Sending Exception");
 		return "Task " + this.taskId + " has completed";

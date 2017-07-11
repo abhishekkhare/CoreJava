@@ -1,7 +1,6 @@
 package com.edu.abhi.concurrency.threads.blockingQueue;
 
 import java.util.Random;
-import java.util.UUID;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 
