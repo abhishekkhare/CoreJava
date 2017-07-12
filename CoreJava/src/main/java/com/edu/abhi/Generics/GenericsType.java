@@ -1,5 +1,10 @@
 package com.edu.abhi.Generics;
-
+/**
+ * 
+ * @author abhishekkhare
+ *
+ * @param <T>
+ */
 public class GenericsType<T> {
 	 
     private T t;
@@ -19,5 +24,6 @@ public class GenericsType<T> {
         GenericsType type1 = new GenericsType(); //raw type
         type1.set("Pankaj"); //valid
         type1.set(10); //valid and autoboxing support
+        
     }
 }
