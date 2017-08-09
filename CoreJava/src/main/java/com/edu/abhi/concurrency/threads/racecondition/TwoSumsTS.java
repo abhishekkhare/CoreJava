@@ -9,9 +9,10 @@ public class TwoSumsTS {
 
 	public void add(int val1, int val2) {
 		synchronized (this) {
+			System.out.println("*************" + Thread.currentThread().getName() + "**********************");
 			this.sum1 += val1;
 			this.sum2 += val2;
-			System.out.println("Sum1:" + sum1 + " Sum2:" + sum2);
+			System.out.println(Thread.currentThread().getName() + " Sum1:" + sum1 + " val1:" + val1 + " sum2:" + sum2 + " val2:" + val2);
 		}
 	}
 

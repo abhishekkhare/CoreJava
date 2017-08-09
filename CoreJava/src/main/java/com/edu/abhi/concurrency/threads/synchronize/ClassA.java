@@ -6,7 +6,8 @@ public class ClassA {
 		Thread.currentThread();
 		System.out.println("ThreadA:" + Thread.currentThread().getName() + " - "+ Thread.holdsLock(this) + " - " +this);
 		
-		//Thread.currentThread().sleep(10);
+		Thread.currentThread();
+		Thread.sleep(10);
 	}
 
 	public synchronized  static void someStaticMethod() throws InterruptedException {

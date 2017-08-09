@@ -10,7 +10,7 @@ public class Counter {
 	public int inc() throws InterruptedException {
 		lock.lock();
 		int newCount = ++count;
-		Thread.sleep(100);
+		Thread.sleep(10);
 		lock.unlock();
 		return newCount;
 	}

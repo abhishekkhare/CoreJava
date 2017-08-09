@@ -26,7 +26,7 @@ class ThreadDemo implements Runnable {
 		if("Thread 2".equals(str)){
 			t.setPriority(Thread.MAX_PRIORITY);
 		}else{
-			t.setPriority(Thread.NORM_PRIORITY);
+			t.setPriority(Thread.MIN_PRIORITY);
 		}
 		t.start();
 	}

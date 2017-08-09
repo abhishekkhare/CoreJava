@@ -23,10 +23,12 @@ public class TwoSumsTSEnhanced {
 
 	public void add(int val1, int val2) {
 		synchronized (this.sum1Lock) {
+			System.out.println("*************" + Thread.currentThread().getName() + "**********************");
 			this.sum1 += val1;
-			System.out.print(this.sum1);
+			System.out.println(this.sum1);
 		}
 		synchronized (this.sum2Lock) {
+			System.out.println("##############" + Thread.currentThread().getName() + "#################");
 			this.sum2 += val2;
 			System.out.println(" - " + this.sum2);
 		}

@@ -14,9 +14,12 @@ public class BlockingQueueA {
 
 	public synchronized void enqueue(Object item) throws InterruptedException {
 		while (this.queue.size() == this.limit) {
+			System.out.println("Queue is Full wait!! " + this.queue.size() + " item::" + item);
 			wait();
 		}
+
 		if (this.queue.size() == 0) {
+			System.out.println("Queue 0");
 			notifyAll();
 		}
 		System.out.println("EN:" + item + " Queue Size" + this.queue.size());
@@ -26,9 +29,11 @@ public class BlockingQueueA {
 
 	public synchronized Object dequeue() throws InterruptedException {
 		while (this.queue.size() == 0) {
+			System.out.println("Queue is Empty wait!! " + this.queue.size());
 			wait();
 		}
 		if (this.queue.size() == this.limit) {
+			System.out.println("Queue Limit");
 			notifyAll();
 		}
 		Object temp  = this.queue.remove(0);
@@ -38,8 +43,8 @@ public class BlockingQueueA {
 	}
 
 	public static void main(String [] args){
-		BlockingQueueA b = new BlockingQueueA(20);
-		for (int i = 0; i < 100; i++) {
+		BlockingQueueA b = new BlockingQueueA(10);
+		for (int i = 0; i < 20; i++) {
 			EnqueueRunnable e = new EnqueueRunnable(b,""+i);
 			DqueueRunnable d = new DqueueRunnable(b);
 			Thread t1 = new Thread(e);
@@ -62,7 +67,8 @@ class EnqueueRunnable implements Runnable{
 	@Override
 	public void run() {
 		try {
-			//Thread.sleep(1000);
+			Thread.sleep(1000);
+			System.out.println("Trying to Enqueue::" + o);
 			b.enqueue(o);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -78,7 +84,7 @@ class DqueueRunnable implements Runnable{
 	@Override
 	public void run() {
 		try {
-			Thread.sleep(100);
+			//Thread.sleep(10);
 			b.dequeue();
 		} catch (InterruptedException e) {
 			e.printStackTrace();

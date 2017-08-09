@@ -13,8 +13,7 @@ public class TimeOutLock {
 		new Thread(try2_1,"B").start();
 	}
 
-	private static Runnable getRunnable(final ReentrantLock lock1, final String lock1Name, final ReentrantLock lock2,
-			final String lock2Name) {
+	private static Runnable getRunnable(final ReentrantLock lock1, final String lock1Name, final ReentrantLock lock2,final String lock2Name) {
 		return new Runnable() {
 			@Override
 			public void run() {

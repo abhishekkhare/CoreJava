@@ -7,8 +7,9 @@ public class Counter {
 	protected long count = 0;
 
 	public void add(long value) {
+		System.out.println("*************" + Thread.currentThread().getName() + "**********************");
 		this.count = this.count + value;
-		System.out.println(this.count);
+		System.out.println(Thread.currentThread().getName() + " --- "+value + " -- "+this.count);
 	}
 
 	public static void main(String[] args) {

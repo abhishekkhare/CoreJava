@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class InterThreadCommunicationExample {
-
+	final static Integer queueSize = 4;
 	public static void main(String args[]) {
 
 		final Queue<Integer> sharedQ = new LinkedList<Integer>();
@@ -29,11 +29,10 @@ class Producer1 extends Thread {
 	@Override
 	public void run() {
 
-		for (int i = 0; i < 4; i++) {
-
+		for (int i = 0; i < InterThreadCommunicationExample.queueSize; i++) {
 			synchronized (sharedQ) {
 				// waiting condition - wait until Queue is not empty
-				while (sharedQ.size() >= 3) {
+				while (sharedQ.size() >= InterThreadCommunicationExample.queueSize-1) {
 					try {
 						System.out.println("Queue is full, waiting");
 						sharedQ.wait();
@@ -76,7 +75,7 @@ class Consumer extends Thread {
 				sharedQ.notify();
 
 				// termination condition
-				if (number == 3) {
+				if (number == InterThreadCommunicationExample.queueSize-1) {
 					break;
 				}
 			}

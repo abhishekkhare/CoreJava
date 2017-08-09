@@ -43,7 +43,11 @@ public class TestInterrupt {
 	}
 
 }
-
+/**
+ * a thread that doesn't stop working
+ * @author abhishekkhare
+ *
+ */
 class InterruptRunnable1 implements Runnable {
 	@Override
 	public void run() {
@@ -57,7 +61,11 @@ class InterruptRunnable1 implements Runnable {
 		System.out.println("thread is running...");
 	}
 }
-
+/**
+ * thread that behaves normally
+ * @author abhishekkhare
+ *
+ */
 class InterruptRunnable2 implements Runnable {
 	@Override
 	public void run() {
@@ -67,7 +75,11 @@ class InterruptRunnable2 implements Runnable {
 		System.out.println("Thread Ended - " + Thread.currentThread().getName());
 	}
 }
-
+/**
+ * a thread that stops working
+ * @author abhishekkhare
+ *
+ */
 class InterruptRunnable3 implements Runnable {
 	@Override
 	public void run() {
@@ -85,11 +97,11 @@ class InterruptRunnable4 implements Runnable {
 	@Override
 	public void run() {
 		System.out.println("Thread Started - " + Thread.currentThread().getName());
-		for (int i = 1; i <= 2; i++) {
+		for (int i = 1; i <= 10; i++) {
 			if (Thread.interrupted()) {
-				System.out.println("code for interrupted thread"  + Thread.currentThread().getName());
+				System.out.println(i + " code for interrupted thread"  + Thread.currentThread().getName());
 			} else {
-				System.out.println("code for normal thread"  + Thread.currentThread().getName());
+				System.out.println(i + " code for normal thread"  + Thread.currentThread().getName());
 			}
 		} // end of for loop
 		System.out.println("Thread Ended - " + Thread.currentThread().getName());

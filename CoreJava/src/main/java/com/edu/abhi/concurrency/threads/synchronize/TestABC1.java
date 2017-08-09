@@ -2,7 +2,7 @@ package com.edu.abhi.concurrency.threads.synchronize;
 
 public class TestABC1 {
 	public static void main(String[] args) {
-		ClassC c = new ClassC();
+		ClassC c = new ClassC("test");
 		for (int i = 0; i < 4; i++) {
 			Myrunnable1 r = new Myrunnable1(c);
 			Thread t = new Thread(r,i+"");

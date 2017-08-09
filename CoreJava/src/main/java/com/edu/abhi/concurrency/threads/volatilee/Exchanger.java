@@ -22,7 +22,7 @@ public class Exchanger {
 	}
 
 	public Object take() {
-		System.out.println("volatile read");
+		System.out.println("start volatile read");
 		while (!hasNewObject) { // volatile read
 			System.out.println("TAKE::Waiting for volatile to be written::" + object);
 		}
