@@ -13,11 +13,11 @@ public class SingletonAsEnumTest {
 		Thread t4 = new Thread(r4,"4");
 		
 		t1.start();
-		Thread.sleep(100);
+		Thread.sleep(1000);
 		t3.start();
-		Thread.sleep(100);
+		Thread.sleep(1000);
 		t4.start();
-		Thread.sleep(100);
+		Thread.sleep(1000);
 		t2.start();
 		
 		

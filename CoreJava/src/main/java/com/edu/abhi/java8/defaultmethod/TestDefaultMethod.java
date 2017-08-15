@@ -14,7 +14,8 @@ public class TestDefaultMethod {
 		System.out.println("**********Static Stream***********");
 		Animal.Stream();
 		Moveable.Stream();
-		//Car.Stream();//Not available as Static methods
+		Car.Stream1();
+		Car.Stream();
 
 	}
 

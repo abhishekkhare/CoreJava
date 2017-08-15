@@ -12,9 +12,8 @@ public class Singleton {
 	public static Singleton getInstance() {
 		if (uniqueInstance == null) {
 			try {
-				Thread.currentThread().sleep(1000);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			System.out.println("" + Thread.currentThread().getName());

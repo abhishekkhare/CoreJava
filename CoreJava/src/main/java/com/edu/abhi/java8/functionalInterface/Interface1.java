@@ -9,7 +9,8 @@ package com.edu.abhi.java8.functionalInterface;
 public interface Interface1 {
 
 	void method1(String str);
-
+	//if we uncomment the method2 we get compiler error since @FunctionalInterface can have only one abstract method
+	//void method2(String str);
 	default void log(String str) {
 		System.out.println("I1 logging::" + str);
 	}
@@ -18,6 +19,7 @@ public interface Interface1 {
 		System.out.println("Printing " + str);
 	}
 
+	
 	// trying to override Object method gives compile time error as
 	// "A default method cannot override a method from java.lang.Object"
 

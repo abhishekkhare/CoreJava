@@ -8,8 +8,10 @@ import java.util.Map;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+
 /**
  * http://www.studytrails.com/java/java8/java8_collections_new_methods/
+ * 
  * @author abhishekkhare
  *
  */
@@ -22,22 +24,23 @@ public class Java8CollectionsAPI {
 	}
 
 	private static void mapReplaceAllCompute() {
-		Map<String,Integer> authorBooks = new HashMap<String,Integer>();
+		Map<String, Integer> authorBooks = new HashMap<String, Integer>();
 		authorBooks.put("Book1", 30);
 		authorBooks.put("Book4234", 10);
 		authorBooks.put("Book", 70);
-		
-		authorBooks.forEach((k,v)->System.out.println("Book Name : " + k + " Copies Sold : " + v));
-		
-		System.out.println("After Replace all,we are trying to replace the count of books by the letters in authors words + original count");
-		authorBooks.replaceAll((a,b)->a.length()+b);
-		authorBooks.forEach((k,v)->System.out.println("Book Name : " + k + " Copies Sold : " + v));
+
+		authorBooks.forEach((k, v) -> System.out.println("Book Name : " + k + " Copies Sold : " + v));
+
+		System.out.println(
+				"After Replace all,we are trying to replace the count of books by the letters in authors words + original count");
+		authorBooks.replaceAll((a, b) -> a.length() + b);
+		authorBooks.forEach((k, v) -> System.out.println("Book Name : " + k + " Copies Sold : " + v));
 		authorBooks.compute("Book4234", (a, b) -> b * 5);
 		System.out.println("After applying the compute");
-		authorBooks.forEach((k,v)->System.out.println("Book Name : " + k + " Copies Sold : " + v));
+		authorBooks.forEach((k, v) -> System.out.println("Book Name : " + k + " Copies Sold : " + v));
 		System.out.println("GetOrDefault::" + authorBooks.getOrDefault("AuthorA", 0));
 		System.out.println("GetOrDefault1::" + authorBooks.getOrDefault("Book4234", 0));
-		
+
 	}
 
 	private static void spliterator() {
@@ -51,10 +54,10 @@ public class Java8CollectionsAPI {
 		s.forEachRemaining(System.out::println);
 		System.out.println("-- traversing the other half of the spliterator --- ");
 		s1.forEachRemaining(System.out::println);
-		
+
 		System.out.println("-- traversing the other half-1/2 of the spliterator --- ");
 		s2.forEachRemaining(System.out::println);
-		
+
 		System.out.println("-- traversing the other half-1/4 of the spliterator --- ");
 		s3.forEachRemaining(System.out::println);
 
@@ -66,7 +69,11 @@ public class Java8CollectionsAPI {
 		list.add(new Person(2, "Ram"));
 		list.add(new Person(3, "Krishna"));
 		Consumer<Person> style = (Person p) -> System.out.println("id:" + p.getPid() + ", Name:" + p.getName());
+		Consumer<Person> style1 = (Person p) -> p.name = p.name + " hello";
 		System.out.println("---Before delete---");
+		list.forEach(style);
+		list.forEach(style1);// see this changes the underlying Object
+		System.out.println("---After Modification---");
 		list.forEach(style);
 		int pid = 2;
 		Predicate<Person> personPredicate = p -> p.getPid() == pid;
@@ -83,7 +90,7 @@ public class Java8CollectionsAPI {
 
 		Iterator<Integer> nameIterator = items.iterator();
 		int count = 0;
-		for (; nameIterator.hasNext();) {
+		while (nameIterator.hasNext()) {
 			Integer integer = (Integer) nameIterator.next();
 			if (count > 300) {
 				break;
@@ -91,6 +98,13 @@ public class Java8CollectionsAPI {
 			System.out.println("integer::" + integer);
 			count++;
 		}
+		System.out.println("Loop 1 done");
+		/**
+		 * Performs the given action for each remaining element until all
+		 * elements have been processed or the action throws an exception.
+		 * Actions are performed in the order of iteration, if that order is
+		 * specified.
+		 */
 		nameIterator.forEachRemaining(System.out::println);
 
 	}

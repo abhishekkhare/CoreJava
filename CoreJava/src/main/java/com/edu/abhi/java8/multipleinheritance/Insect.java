@@ -28,4 +28,14 @@ public class Insect implements Moveable, Crawlable {
 		
 	}
 
+	
+	public static void main(String [] args){
+		Insect i = new Insect();
+		i.crawl();
+		i.moveFast();
+		i.moveNow();
+		i.run();
+		i.test();
+		
+	}
 }

@@ -60,7 +60,6 @@ public class Java8ForEachExample {
 		System.out.println("**** After Java 8 Type 3");
 		
 		
-		
 	}
 
 	private static void listExample() {

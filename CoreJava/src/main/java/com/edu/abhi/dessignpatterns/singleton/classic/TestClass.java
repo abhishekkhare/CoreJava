@@ -21,9 +21,8 @@ public class TestClass {
 		t1.start();
 		t2.start();
 		try {
-			Thread.currentThread().sleep(3000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -62,7 +61,7 @@ public class TestClass {
 		t1.start();
 		t2.start();
 		try {
-			Thread.currentThread().sleep(3000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

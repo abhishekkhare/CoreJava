@@ -12,12 +12,16 @@ package com.edu.abhi.java8.functionalInterface;
  */
 
 @FunctionalInterface
-public interface ComplexFunctionalInterface extends SimpleFuncInterface {
+public interface VeryComplexFunctionalInterface extends ComplexFunctionalInterface {
 	default public void doSomeWork() {
-		System.out.println("Doing some work in complex interface impl...");
+		System.out.println("Doing some work in very complex interface impl...");
 	}
 
 	default public void doSomeOtherWork() {
-		System.out.println("Doing some other work in complex interface impl...");
+		System.out.println("Doing some other work in very complex interface impl...");
+	}
+	
+	default public void doSomeVeryComplexWork() {
+		System.out.println("Doing some very complex interface impl...");
 	}
 }
