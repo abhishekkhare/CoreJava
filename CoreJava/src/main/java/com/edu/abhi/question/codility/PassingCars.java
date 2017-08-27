@@ -1,5 +1,10 @@
 package com.edu.abhi.question.codility;
 
+/**
+ * https://codility.com/programmers/lessons/5-prefix_sums/passing_cars/
+ * @author abhishekkhare
+ *
+ */
 public class PassingCars {
 
 	public static void main(String[] args) {

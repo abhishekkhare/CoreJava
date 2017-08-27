@@ -2,19 +2,24 @@ package com.edu.abhi.question.codility;
 
 import java.util.Stack;
 
+/**
+ * https://codility.com/programmers/lessons/7-stacks_and_queues/brackets/
+ * @author abhishekkhare
+ *
+ */
 public class Brackets {
 
 	public static void main(String[] args) {
-		//System.out.println(solution("{[()()]}"));
-		//System.out.println(solution("([)()]"));
-		//System.out.println(solution("([)()]{}"));
-		//System.out.println(solution("[()]{}"));
-		//System.out.println(solution("()[]{}"));
-		//System.out.println(solution("[]{})("));
-		//System.out.println(solution(")([]{})("));
-		//System.out.println(solution("[]{})("));
-		//System.out.println(solution("{{{{{"));
-		System.out.println(solution("(()(())())"));
+//		System.out.println(solution("{[()()]}"));
+//		System.out.println(solution("([)()]"));
+//		System.out.println(solution("([)()]{}"));
+//		System.out.println(solution("[()]{}"));
+//		System.out.println(solution("()[]{}"));
+//		System.out.println(solution("[]{})("));
+//		System.out.println(solution(")([]{})("));
+//		System.out.println(solution("[]{})("));
+//		System.out.println(solution("{{{{{"));
+//		System.out.println(solution("(()(())())"));
 
 	}
 

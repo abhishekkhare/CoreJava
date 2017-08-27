@@ -1,5 +1,9 @@
 package com.edu.abhi.question.codility;
-
+/**
+ * https://codility.com/programmers/lessons/3-time_complexity/tape_equilibrium/
+ * @author abhishekkhare
+ *
+ */
 public class TapeEquilibrium {
 
 	public static void main(String[] args) {		

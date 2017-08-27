@@ -1,7 +1,11 @@
 package com.edu.abhi.question.codility;
 
 import java.util.Arrays;
-
+/**
+ * https://codility.com/programmers/lessons/6-sorting/triangle/
+ * @author abhishekkhare
+ *
+ */
 public class Triangle {
 
 	public static void main(String[] args) {

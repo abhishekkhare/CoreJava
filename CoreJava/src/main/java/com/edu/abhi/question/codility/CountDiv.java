@@ -1,19 +1,24 @@
 package com.edu.abhi.question.codility;
 
+/**
+ * https://codility.com/programmers/lessons/5-prefix_sums/count_div/
+ * @author abhishekkhare
+ *
+ */
 public class CountDiv {
 
 	public static void main(String[] args) {
 		
-//		System.out.println(solution(6,15, 2));
-//		System.out.println(solution(6,11, 2));
+		//System.out.println(solution(6,15, 2));
+		System.out.println(solution(6,12, 2));
 //		System.out.println(solution(6,15, 3));
 //		System.out.println(solution(6,11, 5));
-//		System.out.println(solution(5,15, 5));
+		System.out.println(solution(5,15, 5));
 //		System.out.println(solution(10,15, 5));
 //		System.out.println(solution(10,52, 5));
-		System.out.println(solution(11,345, 17));
-		System.out.println(solution(7,52, 5));
-		System.out.println(solution(10,10, 20));
+//		System.out.println(solution(11,345, 17));
+//		System.out.println(solution(7,52, 5));
+//		System.out.println(solution(10,10, 20));
 		
 		
 	}

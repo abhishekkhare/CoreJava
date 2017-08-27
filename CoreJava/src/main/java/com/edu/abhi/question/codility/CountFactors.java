@@ -1,5 +1,9 @@
 package com.edu.abhi.question.codility;
-
+/**
+ * https://codility.com/programmers/lessons/10-prime_and_composite_numbers/count_factors/
+ * @author abhishekkhare
+ *
+ */
 public class CountFactors {
 
 	public static void main(String[] args) {

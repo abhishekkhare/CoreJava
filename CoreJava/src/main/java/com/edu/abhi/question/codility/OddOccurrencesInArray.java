@@ -2,6 +2,12 @@ package com.edu.abhi.question.codility;
 
 import java.util.Arrays;
 
+/**
+ * https://codility.com/programmers/lessons/2-arrays/odd_occurrences_in_array/
+ * 
+ * @author abhishekkhare
+ *
+ */
 public class OddOccurrencesInArray {
 	public static void main(String[] args) {
 		System.out.println(solution(new int[]{9,3,9,3,9,7,9}));

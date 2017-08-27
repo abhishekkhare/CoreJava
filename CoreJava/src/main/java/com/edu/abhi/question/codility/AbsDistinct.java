@@ -1,8 +1,15 @@
 package com.edu.abhi.question.codility;
 
+/*
+ * 
+ */
 import java.util.HashSet;
 import java.util.Set;
-
+/**
+ * 
+ * @author abhishekkhare
+ *
+ */
 public class AbsDistinct {
 
 	public static void main(String[] args) {

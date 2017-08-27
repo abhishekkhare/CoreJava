@@ -4,9 +4,15 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
+/**
+ * https://codility.com/programmers/lessons/1-iterations/binary_gap/
+ * @author abhishekkhare
+ *
+ */
 public class BinaryGap {
 
 	public static void main(String[] args) {
+		System.out.println(solution(0));
 		System.out.println(solution(9));
 		System.out.println(solution(529));
 		System.out.println(solution(20));
@@ -22,9 +28,9 @@ public class BinaryGap {
 
 	public static int solution(int N) {
 		int maxGap=0;
-		Set<Integer> list = new TreeSet<Integer>();
+		Set<Integer> set = new TreeSet<Integer>();
 		String binarString = Integer.toBinaryString(N);
-		System.out.println(binarString);
+		System.out.println(N+"--"+binarString);
 		String temp = binarString;
 		while(true){
 			//System.out.println(temp);
@@ -32,12 +38,12 @@ public class BinaryGap {
 			if(i1<0){
 				break;
 			}
-			list.add(i1);
+			set.add(i1);
 			temp = temp.substring(i1+1, temp.length());
 			
 		}
 		
-		for (Iterator <Integer>iterator = list.iterator(); iterator.hasNext();) {
+		for (Iterator <Integer>iterator = set.iterator(); iterator.hasNext();) {
 			Integer integer =  iterator.next();
 			//System.out.println(integer);
 			if(maxGap<integer){

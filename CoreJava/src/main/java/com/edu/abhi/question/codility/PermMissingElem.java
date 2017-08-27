@@ -2,9 +2,15 @@ package com.edu.abhi.question.codility;
 
 import java.util.Arrays;
 
+/**
+ * https://codility.com/programmers/lessons/3-time_complexity/perm_missing_elem/
+ * @author abhishekkhare
+ *
+ */
 public class PermMissingElem {
 
 	public static void main(String[] args) {
+		System.out.println(solution(new int[] {}));
 		System.out.println(solution(new int[] { 1,3,5,7,9,2,4,6,10}));
 		System.out.println(solution(new int[] { 8,3,5,7,9,2,4,6,10}));
 		System.out.println(solution(new int[] { 1,3,5,7,9,2,4,6,8}));
@@ -20,7 +26,7 @@ public class PermMissingElem {
 			Arrays.sort(A);
 			System.out.println(Arrays.toString(A));
 			for (int i = 0; i < A.length; i++) {
-				System.out.println(A[i] + " --- "+ i);
+				//System.out.println(A[i] + " --- "+ i);
 				if(A[i]==i+1){
 					//contihue
 				}else{

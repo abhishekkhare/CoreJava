@@ -1,7 +1,11 @@
 package com.edu.abhi.question.codility;
 
 import java.util.Arrays;
-
+/**
+ * https://codility.com/programmers/lessons/4-counting_elements/max_counters/
+ * @author abhishekkhare
+ *
+ */
 public class MaxCounters {
 
 	public static void main(String[] args) {
@@ -15,9 +19,10 @@ public class MaxCounters {
 	public static int[] solution(int N, int[] A){
 		int [] temp = new int[N];
 		int maxCounter = 0;
-		Arrays.fill(temp, 0);
+		//Arrays.fill(temp, 0);
 		for (int i = 0; i < A.length; i++) {
 			System.out.println(A[i]+"[]"+Arrays.toString(temp));
+			//if(A[i]>=1 && A[i]<=N){
 			if(A[i]>=1 && A[i]<=N){
 				temp[A[i]-1]=temp[A[i]-1]+1;
 				if(temp[A[i]-1]>maxCounter)

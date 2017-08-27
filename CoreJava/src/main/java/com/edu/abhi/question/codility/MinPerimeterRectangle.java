@@ -1,5 +1,9 @@
 package com.edu.abhi.question.codility;
-
+/**
+ * https://codility.com/programmers/lessons/10-prime_and_composite_numbers/min_perimeter_rectangle/
+ * @author abhishekkhare
+ *
+ */
 public class MinPerimeterRectangle {
 
 	public static void main(String[] args) {

@@ -1,7 +1,11 @@
 package com.edu.abhi.question.codility;
 
 import java.util.Arrays;
-
+/**
+ * https://codility.com/programmers/lessons/4-counting_elements/perm_check/
+ * @author abhishekkhare
+ *
+ */
 public class PermCheck {
 
 	public static void main(String[] args) {

@@ -1,7 +1,11 @@
 package com.edu.abhi.question.codility;
 
 import java.util.Arrays;
-
+/**
+ * https://codility.com/programmers/lessons/6-sorting/max_product_of_three/
+ * @author abhishekkhare
+ *
+ */
 public class MaxProductOfThree {
 	public static void main (String[] args) {
 		int[] A = new int[] {-3,1,2,-2,5,6};

@@ -2,7 +2,11 @@ package com.edu.abhi.question.codility;
 
 import java.util.HashSet;
 import java.util.Set;
-
+/**
+ * https://codility.com/programmers/lessons/6-sorting/distinct/
+ * @author abhishekkhare
+ *
+ */
 public class Distinct {
 
 	public static void main(String[] args) {

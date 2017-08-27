@@ -3,6 +3,11 @@ package com.edu.abhi.question.codility;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * https://codility.com/programmers/lessons/4-counting_elements/frog_river_one/
+ * @author abhishekkhare
+ *
+ */
 public class FrogRiverOne {
 
 	public static void main(String[] args) {
@@ -10,8 +15,9 @@ public class FrogRiverOne {
 //		System.out.println(solution(10, new int[]{1,3,1,4,2,3,5,4}));
 //		System.out.println(solution (4, new int[]{1,3,1,2,3,5,4}));
 //		System.out.println(solution (1, new int[]{1,3,1,4,2,3,5,4}));
-		System.out.println(solution(4, new int[]{1,3,1,4,2,3,5,4,9,8,6,7,10,11}));
-		System.out.println(solution(10, new int[]{1,3,1,4,2,3,5,4,9,8,6,7,10,11}));
+		//System.out.println(solution(4, new int[]{1,3,1,4,2,3,5,4,9,8,6,7,10,11}));
+		//System.out.println(solution(10, new int[]{1,3,1,4,2,3,5,4,9,8,6,7,10,11}));
+		System.out.println(solution(11, new int[]{1,3,1,4,2,3,5,4,9,8,6,7,10,11}));
 
 	}
 
