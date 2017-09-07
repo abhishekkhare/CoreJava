@@ -17,10 +17,10 @@ import java.util.function.Predicate;
  */
 public class Java8CollectionsAPI {
 	public static void main(String[] args) {
-		forEachRemaining();
-		removeIf();
-		spliterator();
-		mapReplaceAllCompute();
+//		forEachRemaining();
+//		removeIf();
+//		spliterator();
+//		mapReplaceAllCompute();
 	}
 
 	private static void mapReplaceAllCompute() {
@@ -45,7 +45,7 @@ public class Java8CollectionsAPI {
 
 	private static void spliterator() {
 		List<Integer> items = new ArrayList<Integer>();
-		for (int i = 0; i < 1000; i++)
+		for (int i = 0; i < 101; i++)
 			items.add(i);
 		Spliterator<Integer> s = items.spliterator();
 		Spliterator<Integer> s1 = s.trySplit();

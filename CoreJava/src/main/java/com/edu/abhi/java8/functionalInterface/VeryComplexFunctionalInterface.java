@@ -11,7 +11,7 @@ package com.edu.abhi.java8.functionalInterface;
  *         the interface would still be called an functional interface.
  */
 
-@FunctionalInterface
+//@FunctionalInterface
 public interface VeryComplexFunctionalInterface extends ComplexFunctionalInterface {
 	default public void doSomeWork() {
 		System.out.println("Doing some work in very complex interface impl...");

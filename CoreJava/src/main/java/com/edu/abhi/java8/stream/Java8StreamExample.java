@@ -35,6 +35,7 @@ public class Java8StreamExample {
 			System.out.println("Diff Parallel::" + (after - before));
 
 		}
+		
 		/**
 		 * In most cases for system with multi core, the parallelStream would
 		 * have better performance.
@@ -61,7 +62,7 @@ public class Java8StreamExample {
 			//stream2.forEach(System.out::println);
 
 		}
-
+		
 		{
 			// Applying 12% VAT on each purchase // Old way:
 			List<Integer> costBeforeTax = Arrays.asList(100, 200, 300, 400, 500);
@@ -89,7 +90,7 @@ public class Java8StreamExample {
 			System.out.println("Total : " + bill1);
 
 		}
-
+		System.exit(0);
 		{
 			List<String> strList = new ArrayList<String>();
 			strList.add("abc");

@@ -1,11 +1,8 @@
 package com.edu.abhi.java8.lambda;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class TestLambada {
 
@@ -36,7 +33,7 @@ public class TestLambada {
 			System.out.println("3 - "+integrate(sine3,10));
 			
 		}
-
+		
 		//List Iteration with Lambda
 		{
 			// Prior Java 8 :
@@ -69,6 +66,7 @@ public class TestLambada {
 			System.out.println("Name, which starts with 'J' and four letter long");
 			filter1(languages, (str) -> str.startsWith("J"));
 		}
+		System.exit(0);
 		System.out.println("**************************************************************");
 		{
 			List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7);

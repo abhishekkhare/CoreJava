@@ -14,7 +14,7 @@ public class SimpleFunInterfaceTest {
 				System.out.println("Do work in SimpleFun impl...");
 			}
 		});
-
+		
 		// Very Important, the Lambda Expression always chooses the
 		// subclass which is lowest in the hierarchy for execution. If we remove
 		// the method with
@@ -22,8 +22,10 @@ public class SimpleFunInterfaceTest {
 		// method with "ComplexFunctionalInterface" argument and not the one
 		// with SimpleFuncInterface.
 
+		
 		carryOutWork(() -> System.out.println("Do work in lambda exp impl..."));
-
+		carryOutWork((x) -> System.out.println("X="+x));
+		System.exit(0);
 		System.out.println("*******************************");
 		carryOutWork(new ComplexFunctionalInterface() {
 			@Override
@@ -37,6 +39,11 @@ public class SimpleFunInterfaceTest {
 	public static void carryOutWork(SimpleFuncInterface sfi) {
 		System.out.println("SIMPLE");
 		sfi.doWork();
+	}
+	
+	public static void carryOutWork(Interface1 sfi) {
+		System.out.println("I111");
+		sfi.method1("Hello");
 	}
 
 	public static void carryOutWork(ComplexFunctionalInterface cfi) {

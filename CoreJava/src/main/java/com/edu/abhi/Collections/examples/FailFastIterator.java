@@ -14,7 +14,30 @@ public class FailFastIterator {
 	public static void main(String[] args) {
 		//failFastAdd();
 		//failFastRemove();
-		failFastIteratorRemove();
+		//failFastIteratorRemove();
+		failSafeIteratorRemove();
+	}
+
+	private static void failSafeIteratorRemove() {
+		FailFastIterator f = new FailFastIterator();
+		for (int i = 0; i < 20; i++) {
+			f.list.add(i*1000);
+		}
+		Thread t1 = new Thread(f.removeIteratorItem);
+		t1.start();
+		try {
+			t1.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		for (Iterator <Integer>iterator = f.list.iterator(); iterator.hasNext();) {
+			Integer type =  iterator.next();
+			System.out.println(type);
+		
+		}
+		
 	}
 
 	private static void failFastIteratorRemove() {
@@ -69,7 +92,7 @@ public class FailFastIterator {
 		public void run() {
 			for (Iterator<Integer> iterator = list.iterator(); iterator
 					.hasNext();) {
-				if(iterator.next()%2==0)
+				if(iterator.next()%2000==0)
 					iterator.remove();
 				try {
 					Thread.currentThread().sleep(100);

@@ -5,13 +5,13 @@ package com.edu.abhi.java8.functionalInterface;
  * @author abhishekkhare
  *
  *         Interface can extend another interface and in case the Interface it
- *         is extending in functional and it doesn’t declare any new abstract
+ *         is extending is functional and it doesn’t declare any new abstract
  *         methods then the new interface is also functional. But an interface
  *         can have one abstract method and any number of default methods and
  *         the interface would still be called an functional interface.
  */
 
-@FunctionalInterface
+//@FunctionalInterface
 public interface ComplexFunctionalInterface extends SimpleFuncInterface {
 	default public void doSomeWork() {
 		System.out.println("Doing some work in complex interface impl...");

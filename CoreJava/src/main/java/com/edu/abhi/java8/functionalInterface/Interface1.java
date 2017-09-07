@@ -23,8 +23,8 @@ public interface Interface1 {
 	// trying to override Object method gives compile time error as
 	// "A default method cannot override a method from java.lang.Object"
 
-	// default String toString(){
-	// return "i1";
-	// }
+//	 default String toString(){
+//	 return "i1";
+//	 }
 
 }
