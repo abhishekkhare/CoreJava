@@ -1,0 +1,10 @@
+- Factories handle the details of object creation.
+- We can define the Factory method as static method and it will be called a static factory. 
+But this has a disadvantage that you cannot subclass the create method to change the behavior.
+- All factory patterns encapsulate object creation. 
+The Factory pattern encapsulates object creation by letting subclasses decide what object to create. 
+- Creator classes are PizzaStore -> NyStylePizzaStore, ChicagoStylePizzaStore
+- Product classes are Pizza -> NYStyleCheesePizza,NYStyleVeggiePizza,NYStyleClamPizza,NYStylePepperoniPizza,ChicagoStyleCheesePizza,ChicagoStyleVeggiePizza,ChicagoStyleClamPizza and ChicagoStylePepperoniPizza.
+ Factory Pattern then is something like this:
+ abstract Product factoryMethod(type)
+ 

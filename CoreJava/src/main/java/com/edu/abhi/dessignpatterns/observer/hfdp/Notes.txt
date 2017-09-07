@@ -1,0 +1,8 @@
+- Publisher(Subject) + Subscriber(Observer) = Observer Pattern
+- Observer Patter defines one to many relationship between a set of objects. 
+When the state of one object changes all the dependent objects are notified.
+- Loose Coupling -  Two objects are loosely coupled when they can interact, but have very little knowledge about each other.
+- The Observer Pattern allows Subject and Observers to be loosely coupled.
+Design Principle
+- Strive for loosely coupled design between objects that interact.
+ 

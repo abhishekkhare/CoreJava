@@ -1,0 +1,15 @@
+Disadvantage of Inheritance:
+- Code is duplicated across subclasses.
+- Runtime Behavior changes are difficult.
+- Hard to gain knowledge of all Ducks behavior.
+- Changes can unintentionally effect others ducks.
+
+
+Design Principle 
+- Take what varies and "Encapsulate" it, so it wont effect the rest of your code.
+- Program to an Interface or Super type not an implementation.
+- Favor Composition over Inheritance(only if IS-A relationship is very clear).
+
+Strategy Pattern
+Defines a set of encapsulated algorithms that can be swapped to carry out a specific behavior.
+

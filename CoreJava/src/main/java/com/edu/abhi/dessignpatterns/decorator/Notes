@@ -1,0 +1,6 @@
+Design Principle
+- Classes should be open for extension but closed for modification.
+ Decorator Pattern -  It allows additional responsibilities to an object dynamically. 
+- It is important for the Decorator to have the same type as the object it is decorating. 
+- In case of decorator, inheritance is used for type matching and not to get behavior.
+  

@@ -1,0 +1,3 @@
+- The NoCommand Object is an example of null Object. 
+A null object is useful when you don't have a meaningful object to return yet it allows us to remove the responsibility for client to check for null.
+  
