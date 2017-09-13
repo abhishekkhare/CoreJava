@@ -19,8 +19,8 @@ import java.util.function.Consumer;
  */
 public class Java8ForEachExample {
 	public static void main(String[] args) {
-		listExample();
-		//mapExample();
+		//listExample();
+		mapExample();
 		
 		
 		
@@ -46,7 +46,7 @@ public class Java8ForEachExample {
 		/**
 		 * traversing with Consumer interface implementation
 		 */
-		BiConsumer<String,Integer> action = new MyConsumer1();
+		BiConsumer<String,Integer> action = new MyBiConsumer();
 		items.forEach(action);
 		System.out.println("**** After Java 8 Type 2");
 		
@@ -82,7 +82,7 @@ public class Java8ForEachExample {
 
 				myList.forEach(new Consumer<Integer>() {
 					public void accept(Integer t) {
-						System.out.println("forEach anonymous class Value::" + t);
+						System.out.println("forEach anonymous class Value:: with 9*"+t +" = " + t*9);
 					}
 
 				});
@@ -94,12 +94,12 @@ public class Java8ForEachExample {
 				myList.forEach(action);
 				System.out.println("**** After Java 8 Type 2");
 				
-				myList.forEach(item->System.out.println(item));
+				myList.forEach(item->System.out.println("forEach as functional programming 7*"+item +" = "+item*7));
 				System.out.println("**** After Java 8 Type 3");
 				
 				myList.forEach(item->{
 					if(item%2==0){
-						System.out.println(item);
+						System.out.println("forEach as functional programming only even::"+item);
 					}
 				});
 				System.out.println("**** After Java 8 Type 3");
@@ -115,15 +115,15 @@ public class Java8ForEachExample {
 // Consumer implementation that can be reused
 class MyConsumer implements Consumer<Integer> {
 	public void accept(Integer t) {
-		System.out.println("Consumer impl Value::" + t);
+		System.out.println("Consumer impl Value with 8*"+t +" = " + t*8);
 	}
 }
 
-class MyConsumer1 implements BiConsumer<String, Integer> {
+class MyBiConsumer implements BiConsumer<String, Integer> {
 
 	@Override
 	public void accept(String t, Integer u) {
-		System.out.println("Consumer impl Key::" + t + " Value::" + u);
+		System.out.println("BiConsumer impl Key::" + t + " Value::" + u);
 		
 	}
 	

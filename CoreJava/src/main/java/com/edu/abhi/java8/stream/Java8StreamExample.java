@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -54,15 +57,18 @@ public class Java8StreamExample {
 			//map - Returns a stream consisting of the results of applying the given function to the elements of this stream.
 			costBeforeTax.stream().map((cost) -> cost + .12 * cost).forEach(System.out::println);
 			System.out.println("Break it Down");
-			
-			Stream<Integer> stream = costBeforeTax.stream();
-			Stream<Double>stream2 = stream.map((cost) -> cost + .12 * cost);
-			stream2.forEach(y -> System.out.println(y));
-			//  if we try to iterate the same stream more than once we get java.lang.IllegalStateException: stream has already been operated upon or closed
-			//stream2.forEach(System.out::println);
+			{
+				Stream<Integer> stream = costBeforeTax.stream();
+				Stream<Double>stream2 = stream.map((cost) -> cost + .12 * cost);
+				stream2.forEach(y -> System.out.println(y));
+				//  if we try to iterate the same stream more than once we get java.lang.IllegalStateException: stream has already been operated upon or closed
+				//stream2.forEach(System.out::println);
+				
+			}
 
 		}
 		
+
 		{
 			// Applying 12% VAT on each purchase // Old way:
 			List<Integer> costBeforeTax = Arrays.asList(100, 200, 300, 400, 500);
@@ -89,8 +95,30 @@ public class Java8StreamExample {
 			double bill1 = stream2.reduce((sum, cost) -> sum + cost).get();
 			System.out.println("Total : " + bill1);
 
+			
+			{
+				Stream<Integer> myStream = costBeforeTax.stream();
+				System.out.println("myStream");
+				myStream.forEach(p -> System.out.println(p));
+				myStream = costBeforeTax.stream();
+				
+				Function <Integer,Double> mapper = new MyCustomMapper<Integer,Double>();
+				Stream<Double> mappedStream = myStream.map(mapper);
+				System.out.println("mappedStream");
+				mappedStream.forEach(p -> System.out.println(p));	
+				myStream = costBeforeTax.stream();
+				mappedStream = myStream.map(mapper);
+				
+				BinaryOperator<Double> accumulator = new MyCustomReducer();
+				Optional<Double> option = mappedStream.reduce(accumulator);
+				
+
+				System.out.println("option" + option.get());
+			}
 		}
-		System.exit(0);
+		
+		
+		
 		{
 			List<String> strList = new ArrayList<String>();
 			strList.add("abc");
@@ -128,4 +156,21 @@ public class Java8StreamExample {
 
 		}
 	}
+}
+
+class MyCustomMapper<R, T> implements Function<Integer, Double>{
+
+	@Override
+	public Double apply(Integer t) {
+		return t + t*.12;
+	}
+	
+}
+
+class MyCustomReducer implements BinaryOperator<Double>{
+	@Override
+	public Double apply(Double t, Double u) {
+		return t+u;
+	}
+	
 }
