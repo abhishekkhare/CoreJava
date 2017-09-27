@@ -18,7 +18,7 @@ import java.util.function.Predicate;
 public class Java8CollectionsAPI {
 	public static void main(String[] args) {
 //		forEachRemaining();
-//		removeIf();
+		removeIf();
 //		spliterator();
 //		mapReplaceAllCompute();
 	}
@@ -105,7 +105,8 @@ public class Java8CollectionsAPI {
 		 * Actions are performed in the order of iteration, if that order is
 		 * specified.
 		 */
-		nameIterator.forEachRemaining(System.out::println);
+		//nameIterator.forEachRemaining(System.out::println);
+		nameIterator.forEachRemaining(p -> System.out.println(p));
 
 	}
 

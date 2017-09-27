@@ -24,8 +24,10 @@ public class SimpleFunInterfaceTest {
 
 		
 		carryOutWork(() -> System.out.println("Do work in lambda exp impl..."));
+		
 		carryOutWork((x) -> System.out.println("X="+x));
-		//System.exit(0);
+		
+		
 		System.out.println("*******************************");
 		carryOutWork(new ComplexFunctionalInterface() {
 			@Override

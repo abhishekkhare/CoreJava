@@ -7,5 +7,5 @@ package com.edu.abhi.java8.functionalInterface;
 
 @FunctionalInterface
 public interface Interface3 {
-	void method3();
+	void method3(String str1,String str2);
 }

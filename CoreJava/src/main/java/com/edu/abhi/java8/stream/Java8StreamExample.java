@@ -12,32 +12,7 @@ import java.util.stream.Stream;
 
 public class Java8StreamExample {
 	public static void main(String[] args) {
-		List<Integer> myList = new ArrayList<>();
-		for (int i = 0; i < 10000000; i++)
-			myList.add(i);
-
-		// sequential stream - Returns a sequential Stream with this collection
-		// as its source.
-		{
-			long before = System.currentTimeMillis();
-			Stream<Integer> sequentialStream = myList.stream();
-			Stream<Integer> highNumsSeq = sequentialStream.filter(p -> p % 100000 == 0);
-			// highNumsSeq.forEach(item->System.out.println(item));
-			long after = System.currentTimeMillis();
-			System.out.println("Diff Seq::" + (after - before));
-		}
-		// parallel stream - Returns a possibly parallel Stream with
-		// this collection as its source. It is allowable for this method to
-		// return a sequential stream.
-		{
-			long before = System.currentTimeMillis();
-			Stream<Integer> parallelStream = myList.parallelStream();
-			Stream<Integer> highNumsSeq1 = parallelStream.filter(p -> p % 100000 == 0);
-			// highNumsSeq1.forEach(item->System.out.println(item));
-			long after = System.currentTimeMillis();
-			System.out.println("Diff Parallel::" + (after - before));
-
-		}
+		//performance();
 		
 		/**
 		 * In most cases for system with multi core, the parallelStream would
@@ -60,7 +35,8 @@ public class Java8StreamExample {
 			{
 				Stream<Integer> stream = costBeforeTax.stream();
 				Stream<Double>stream2 = stream.map((cost) -> cost + .12 * cost);
-				stream2.forEach(y -> System.out.println(y));
+				
+				stream2.forEach(y -> System.out.print(y + " -- "));
 				//  if we try to iterate the same stream more than once we get java.lang.IllegalStateException: stream has already been operated upon or closed
 				//stream2.forEach(System.out::println);
 				
@@ -89,9 +65,14 @@ public class Java8StreamExample {
 			
 			System.out.println("Break it Down");
 			Stream<Integer> stream = costBeforeTax.stream();
-			System.out.println(stream);
+			stream.forEach(p -> System.out.println(p));
+			
+			stream = costBeforeTax.stream();
 			Stream<Double>stream2 = stream.map((cost) -> cost + .12 * cost);
-			System.out.println(stream);
+			stream2.forEach(p -> System.out.println(p));
+			
+			stream = costBeforeTax.stream();
+			stream2 = stream.map((cost) -> cost + .12 * cost);
 			double bill1 = stream2.reduce((sum, cost) -> sum + cost).get();
 			System.out.println("Total : " + bill1);
 
@@ -155,6 +136,36 @@ public class Java8StreamExample {
 			System.out.println("Average of all prime numbers : " + stats.getAverage());
 
 		}
+	}
+
+	private static void performance() {
+		List<Integer> myList = new ArrayList<>();
+		for (int i = 0; i < 10000000; i++)
+			myList.add(i);
+
+		// sequential stream - Returns a sequential Stream with this collection
+		// as its source.
+		{
+			long before = System.currentTimeMillis();
+			Stream<Integer> sequentialStream = myList.stream();
+			Stream<Integer> highNumsSeq = sequentialStream.filter(p -> p % 100000 == 0);
+			// highNumsSeq.forEach(item->System.out.println(item));
+			long after = System.currentTimeMillis();
+			System.out.println("Diff Seq::" + (after - before));
+		}
+		// parallel stream - Returns a possibly parallel Stream with
+		// this collection as its source. It is allowable for this method to
+		// return a sequential stream.
+		{
+			long before = System.currentTimeMillis();
+			Stream<Integer> parallelStream = myList.parallelStream();
+			Stream<Integer> highNumsSeq1 = parallelStream.filter(p -> p % 100000 == 0);
+			// highNumsSeq1.forEach(item->System.out.println(item));
+			long after = System.currentTimeMillis();
+			System.out.println("Diff Parallel::" + (after - before));
+
+		}
+		
 	}
 }
 

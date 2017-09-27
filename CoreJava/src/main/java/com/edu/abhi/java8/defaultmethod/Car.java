@@ -37,8 +37,9 @@ public class Car implements Moveable{
 		a.test();
 		b.test();
 		System.out.println("44444444444444");
-		Car.Stream1();
+		a.Stream1();
 		Moveable.Stream();
+		//b.Stream(); the static method of Interface can only be accessed with class not instance.
 		System.out.println("Done");
 	}
 
