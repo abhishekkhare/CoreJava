@@ -1,4 +1,6 @@
-package com.edu.abhi.algorithm.tree;
+package com.edu.abhi.algorithm.tree.binarytree;
+
+import com.edu.abhi.algorithm.tree.Node;
 
 /**
  * 
