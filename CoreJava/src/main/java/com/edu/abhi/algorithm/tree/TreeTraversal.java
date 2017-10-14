@@ -2,6 +2,7 @@ package com.edu.abhi.algorithm.tree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * 
@@ -22,19 +23,35 @@ import java.util.List;
  */
 public class TreeTraversal {
 
-	public static void depthFirst(TreeNode root, boolean rootFlag) {
+	public static void depthFirstRecursive(TreeNode root, boolean rootFlag) {
 		if (root != null) {
 			if (rootFlag)
 				System.out.println(root.value);
 			List<TreeNode> children = root.children;
 			for (TreeNode node : children) {
-				System.out.println(node.value);
 				if (node.children != null && node.children.size() > 0) {
 					depthFirst(node, false);
 				}
 			}
 		}
+	}
+	
+	
+	public static void depthFirst(TreeNode root, boolean rootFlag) {
 
+		if (root != null) {
+			Stack<TreeNode> stack = new Stack<TreeNode>();
+			stack.push(root);
+			while(!stack.isEmpty()){
+				TreeNode tempNode = stack.pop();
+				System.out.println(tempNode.value);
+				if(tempNode.children!=null && tempNode.children.size()>0){
+					for (TreeNode treeNode : tempNode.children) {
+						stack.push(treeNode);
+					}
+				}
+			}
+		}	
 	}
 
 	public static void breadthFirst(TreeNode root) {
@@ -62,13 +79,43 @@ public class TreeTraversal {
 			}
 		}
 	}
+	
+	public static void breadthFirst1(TreeNode root) {
+		if (root != null) {
+			Stack<TreeNode> stack = new Stack<TreeNode>();
+			List<TreeNode> tempList = new ArrayList<TreeNode>();
+			stack.push(root);
+			while(!stack.isEmpty()){
+				TreeNode tempNode =  stack.pop();
+				System.out.println(tempNode.value);
+				if (tempNode.children != null && tempNode.children.size() > 0){
+					for (TreeNode treeNode : tempNode.children) {
+						tempList.add(treeNode);
+					}
+				}
+				if(stack.isEmpty()){
+					for (int i = tempList.size()-1; i >= 0; i--) {
+						stack.push(tempList.get(i));
+					}
+					tempList = new ArrayList<TreeNode>();
+				}	
+			}
+			
+			
+		}
+	}
 
 	public static void main(String[] args) {
 		TreeNode root = GenerateTree.treeWithMultipleChildren();
+		root.print();
 		System.out.println("******************** Depth First Search with Recursion *********************************");
-		TreeTraversal.depthFirst(root, true);
-		System.out.println("******************** Breadth First Search with Recursion *********************************");
+		TreeTraversal.depthFirstRecursive(root, true);
+		System.out.println("without Recursion");
+		TreeTraversal.depthFirstRecursive(root, true);
+		System.out.println("******************** Breadth First Search *********************************");
 		TreeTraversal.breadthFirst(root);
+		System.out.println("simpler way");
+		TreeTraversal.breadthFirst1(root);
 
 	}
 

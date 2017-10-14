@@ -1,8 +1,6 @@
 package com.edu.abhi.algorithm.tree.binarytree;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -11,11 +9,8 @@ import com.edu.abhi.algorithm.tree.GenerateTree;
 /**
  * 
  * Depth First Traversals
- * 
+ * Preorder Traversal (Root-Left-Right) 
  * Inorder Traversal (Left-Root-Right)
- * 
- * Preorder Traversal (Root-Left-Right)
- * 
  * Postorder Traversal (Left-Right-Root)
  * 
  * Breadth-first search (BFS) - It starts at the tree root (or some arbitrary
@@ -61,6 +56,20 @@ public class TreeTraversal {
 		}
 		return returnList;
 	}
+	
+	/**
+	 * Start with root and cycle down to all the left childeren,once we hit
+	 * null, we jump up one parent and go to right child
+	 * 
+	 * @param focusNode
+	 */
+	public static void preorderTraverseTreeRecursive(BinaryTreeNode focusNode) {
+		if (focusNode != null) {
+			System.out.println(focusNode.value);
+			preorderTraverseTreeRecursive(focusNode.left);
+			preorderTraverseTreeRecursive(focusNode.right);
+		}
+	}
 
 	/**
 	 * The order of "inorder" is: left child -> parent -> right child
@@ -91,8 +100,28 @@ public class TreeTraversal {
 				p = t.right;
 			}
 		}
-
 		return lst;
+	}
+	
+	/**
+	 * All nodes are visited in ascending order, Recursion is used to go to one
+	 * node and then go to its child nodes and so forth.
+	 * 
+	 * Aim for the smallest value first, Start at 1st leftchild, when null is
+	 * reached move up in value.
+	 * 
+	 * @param focusNode
+	 */
+	public static void inOrderTraverseTreeRecursive(BinaryTreeNode focusNode) {
+		if (focusNode != null) {
+			// Traverse the left node
+			inOrderTraverseTreeRecursive(focusNode.left);
+			// Visit the currently focused on node
+			System.out.println(focusNode.value);
+			// Traverse the right node
+			inOrderTraverseTreeRecursive(focusNode.right);
+
+		}
 	}
 
 	/**
@@ -103,17 +132,13 @@ public class TreeTraversal {
 	 */
 	public static ArrayList<String> postorderTraversal(BinaryTreeNode root) {
 		ArrayList<String> lst = new ArrayList<String>();
-
 		if (root == null)
 			return lst;
-
 		Stack<BinaryTreeNode> stack = new Stack<BinaryTreeNode>();
 		stack.push(root);
-
 		BinaryTreeNode prev = null;
 		while (!stack.empty()) {
 			BinaryTreeNode curr = stack.peek();
-
 			// go down the tree.
 			// check if current node is leaf, if so, process it and pop stack,
 			// otherwise, keep going down
@@ -127,7 +152,6 @@ public class TreeTraversal {
 					stack.pop();
 					lst.add(curr.value);
 				}
-
 				// go up the tree from left node
 				// need to check if there is a right child
 				// if yes, push it to stack
@@ -139,7 +163,6 @@ public class TreeTraversal {
 					stack.pop();
 					lst.add(curr.value);
 				}
-
 				// go up the tree from right node
 				// after coming back from right node, process parent node and
 				// pop stack.
@@ -147,14 +170,24 @@ public class TreeTraversal {
 				stack.pop();
 				lst.add(curr.value);
 			}
-
 			prev = curr;
 		}
-
 		return lst;
 	}
-
-	public static ArrayList<String> bfsTraversal(BinaryTreeNode root) {
+	
+	/**
+	 * 
+	 * @param focusNode
+	 */
+	public static void postOrderTraverseTreeRecursive(BinaryTreeNode focusNode) {
+		if (focusNode != null) {
+			postOrderTraverseTreeRecursive(focusNode.left);
+			postOrderTraverseTreeRecursive(focusNode.right);
+			System.out.println(focusNode);
+		}
+	}
+	
+	public static void bfsTraversal(BinaryTreeNode root) {
 		Stack<BinaryTreeNode> stack = new Stack<BinaryTreeNode>();
 		List<BinaryTreeNode> tempStack = new ArrayList<BinaryTreeNode>();
 		if(root!=null){
@@ -180,21 +213,25 @@ public class TreeTraversal {
 			}
 			
 		}
-		return null;
 	}
 
 	public static void main(String[] args) {
 		BinaryTreeNode root = GenerateTree.balacedBinaryTree();
+		BTreePrinter.printNode(root);
 		System.out.println("******************** Pre Order (Root-Left-Right)*********************************");
 		{
 			ArrayList<String> returnList = TreeTraversal.preorderTraversal(root);
 			returnList.stream().forEach(n -> System.out.println(n));
+			System.out.println("*********************** Recursive ****************************");
+			TreeTraversal.preorderTraverseTreeRecursive(root);
 		}
 		System.out
 				.println("******************** Inorder Traversal (Left-Root-Right) *********************************");
 		{
 			ArrayList<String> returnList = TreeTraversal.inorderTraversal(root);
 			returnList.stream().forEach(n -> System.out.println(n));
+			System.out.println("*********************** Recursive ****************************");
+			TreeTraversal.inOrderTraverseTreeRecursive(root);
 		}
 
 		System.out.println(
@@ -202,11 +239,16 @@ public class TreeTraversal {
 		{
 			ArrayList<String> returnList = TreeTraversal.postorderTraversal(root);
 			returnList.stream().forEach(n -> System.out.println(n));
+			System.out.println("*********************** Recursive ****************************");
+			TreeTraversal.postOrderTraverseTreeRecursive(root);
 		}
 
 		System.out.println(
 				"********************* Breadth First Search ********************************");
+		
 		TreeTraversal.bfsTraversal(root);
+		
+		
 	}
 
 }

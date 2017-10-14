@@ -228,7 +228,7 @@ public class GenerateTree {
 		TreeNode tn1 = new TreeNode("Root");
 		TreeNode tn11 = new TreeNode("11");
 		TreeNode tn12 = new TreeNode("12");
-		TreeNode tn13 = new TreeNode("13");
+		//TreeNode tn13 = new TreeNode("13");
 		TreeNode tn14 = new TreeNode("14");
 
 		tn1.children.add(tn11);

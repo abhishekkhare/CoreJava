@@ -6,6 +6,7 @@ import java.util.List;
 import com.edu.abhi.algorithm.tree.binarytree.BinaryTreeNode;
 
 /**
+ * This algorithm is very important, since a lot of questions can be solved if you can find the binary tree path. 
  * 
  * Given a binary tree, return all root-to-leaf paths.
 
