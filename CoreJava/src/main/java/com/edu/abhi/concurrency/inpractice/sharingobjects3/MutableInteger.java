@@ -12,8 +12,13 @@ public class MutableInteger {
 	}
 
 	public void set(int value) {
+		try {
+			Thread.sleep(5);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		this.value = value;
-		System.out.println(Thread.currentThread().getName()+"x="+value);
+		System.out.println(Thread.currentThread().getName()+"x="+get());
 	}
 	
 	public static void main(String [] args){
@@ -41,7 +46,7 @@ public class MutableInteger {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Final Value::" + object.get());
+		System.out.println("Final Value::::" + object.get());
 	}
 }
 

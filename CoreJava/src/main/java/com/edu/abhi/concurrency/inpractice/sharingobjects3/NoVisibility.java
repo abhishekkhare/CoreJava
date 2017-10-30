@@ -17,10 +17,10 @@ public class NoVisibility {
 
 	public static void main(String[] args) throws InterruptedException {
 		new ReaderThread().start();
-		// Thread.sleep(2000); // if the time is increased, the ReaderThread
+		 Thread.sleep(2000); // if the time is increased, the ReaderThread
 		// will keep yeilding
 		ready = true;
-		// Thread.sleep(10); // this shows that ready became true but the value
+		 Thread.sleep(10); // this shows that ready became true but the value
 		// of number does not change but ReaderThread starts executing since
 		// ready=true
 		number = 42;

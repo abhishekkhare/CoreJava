@@ -14,8 +14,8 @@ public class ComparatorMain {
 	public static void main(String[] args) {
 		//sortListById();
 		//sortListByName();
-		//sortMapById();
-		//sortMapByName();
+		sortMapById();
+		sortMapByName();
 		linkedHashMap();
 		
 		

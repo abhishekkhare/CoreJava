@@ -11,10 +11,9 @@ public class Country implements Comparable<Country>{
 	}
 
 	@Override
-	public int compareTo(Country arg0) {
-		Country country = (Country) arg0;
-		return (this.countryId < country.countryId) ? -1
-				: (this.countryId > country.countryId) ? 1 : 0;
+	public int compareTo(Country country) {
+		return (this.countryId < country.countryId) ? -1: (this.countryId > country.countryId) ? 1 : 0;
+		
 	}
 
 	public int getCountryId() {

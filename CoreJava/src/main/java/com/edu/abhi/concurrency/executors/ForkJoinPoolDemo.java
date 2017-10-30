@@ -8,16 +8,15 @@ import java.util.concurrent.RecursiveTask;
 
 public class ForkJoinPoolDemo {
 
-	public static void main(String[] args) {
-		MyRecursiveAction myRecursiveAction = new MyRecursiveAction(500);
+	public static void main(String[] args) throws InterruptedException {
+		MyRecursiveAction myRecursiveAction = new MyRecursiveAction(100);
         ForkJoinPool forkJoinPool = new ForkJoinPool(10);
-		forkJoinPool.invoke(myRecursiveAction);
-		
-//		MyRecursiveTask myRecursiveTask = new MyRecursiveTask(128);
-//
-//		long mergedResult = forkJoinPool.invoke(myRecursiveTask);
-//
-//		System.out.println("mergedResult = " + mergedResult);   
+		System.out.println("Result:"+forkJoinPool.invoke(myRecursiveAction));
+		Thread.sleep(3000);
+		System.out.println("Recursive Task!!!");
+		MyRecursiveTask myRecursiveTask = new MyRecursiveTask(128);
+		long mergedResult = forkJoinPool.invoke(myRecursiveTask);
+		System.out.println("mergedResult = " + mergedResult);   
 		
 
 	}

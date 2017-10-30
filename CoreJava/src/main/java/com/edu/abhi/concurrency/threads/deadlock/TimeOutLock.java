@@ -18,10 +18,11 @@ public class TimeOutLock {
 			@Override
 			public void run() {
 				try {
+					System.out.println("::: "+Thread.currentThread());
 					if (lock1.tryLock(60, TimeUnit.SECONDS)) {
 						System.out.println(lock1Name + " acquired in thread " + Thread.currentThread());
 						if (lock2.tryLock(30, TimeUnit.SECONDS)) {
-							System.out.println(lock2Name + " acquired in thread " + Thread.currentThread());
+							System.out.println(lock2Name + " acquired in thread1 " + Thread.currentThread());
 							Thread.sleep(200);
 						} else {
 							System.out

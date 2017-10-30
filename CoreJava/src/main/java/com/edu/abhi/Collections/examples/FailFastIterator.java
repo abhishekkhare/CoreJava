@@ -28,16 +28,13 @@ public class FailFastIterator {
 		try {
 			t1.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		for (Iterator <Integer>iterator = f.list.iterator(); iterator.hasNext();) {
 			Integer type =  iterator.next();
 			System.out.println(type);
-		
 		}
-		
 	}
 
 	private static void failFastIteratorRemove() {
@@ -49,7 +46,7 @@ public class FailFastIterator {
 		Thread t2 = new Thread(f.iterateItems);
 		t2.start();
 		try {
-			Thread.currentThread().sleep(10);
+			Thread.sleep(10);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -66,7 +63,7 @@ public class FailFastIterator {
 		Thread t2 = new Thread(f.iterateItems);
 		t2.start();
 		try {
-			Thread.currentThread().sleep(10);
+			Thread.sleep(10);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -93,31 +90,33 @@ public class FailFastIterator {
 			for (Iterator<Integer> iterator = list.iterator(); iterator
 					.hasNext();) {
 				if(iterator.next()%2000==0)
-					iterator.remove();
-				try {
-					Thread.currentThread().sleep(100);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+					iterator.remove();//notice we are doing iterator.remove() and not list.remove()
+				
 			}
 		}
 	}
 	class RemoveItem implements Runnable {
 		@Override
 		public void run() {
-			//System.out.println("Removing");
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println("Removing");
 			list.remove(2);
 		}
 	}
 	class AddItem implements Runnable {
 		@Override
 		public void run() {
-			for (int i = 0; i < 100; i++) {
+			for (int i = 0; i < 10; i++) {
 				try {
-					Thread.currentThread().sleep(100);
+					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
+				System.out.println("Trying to add item to the list that is being iterated.");
 				list.add(i);
 			}
 		}
@@ -130,7 +129,7 @@ public class FailFastIterator {
 					.hasNext();) {
 				System.out.println(iterator.next());
 				try {
-					Thread.currentThread().sleep(100);
+					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}

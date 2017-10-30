@@ -13,7 +13,7 @@ public class ArrayBlockingQueueExample {
 
         new Thread(producer).start();
         new Thread(consumer).start();
-
+        System.out.println("done with main");
         Thread.sleep(4000);
     }
 }
@@ -28,10 +28,11 @@ class ProducerA implements Runnable{
 
     public void run() {
         try {
+        	Thread.sleep(1000);
             queue.put("1");
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             queue.put("2");
-            Thread.sleep(1000);
+            Thread.sleep(3000);
             queue.put("3");
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -49,7 +50,7 @@ class ConsumerA implements Runnable{
 
     public void run() {
         try {
-        	System.out.println(queue.element());
+        	//System.out.println(queue.element());
             System.out.println(queue.take());
             System.out.println(queue.take());
             System.out.println(queue.take());

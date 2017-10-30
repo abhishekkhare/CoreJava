@@ -7,8 +7,6 @@ public class Tester {
 
 	public static void main(String[] args) throws InterruptedException {
 		//testStatelessFactorizer();
-		//testUnsafeCountingFactorizer();
-		//testCountingFactorizer();
 		//testLazyInitRace();
 		//testUnsafeCachingFactorizer();
 		testSynchronizedFactorizer();
@@ -84,29 +82,6 @@ public class Tester {
 			Thread.sleep(4);
 			t.start();
 		}
-		
-	}
-
-	@NotThreadSafe
-	private static void testUnsafeCountingFactorizer() throws InterruptedException {
-		UnsafeCountingFactorizer object = new UnsafeCountingFactorizer();
-		for (int i = 1; i <= 100; i++) {
-			Thread t = new Thread(object,"Thread"+i);
-			t.start();
-			t.join();
-		}
-		System.out.println("Object Count::" + object.getCount());		
-	}
-	
-	@ThreadSafe
-	private static void testCountingFactorizer() throws InterruptedException {
-		CountingFactorizer object = new CountingFactorizer();
-		for (int i = 1; i <= 100; i++) {
-			Thread t = new Thread(object,"Thread"+i);
-			t.start();
-			t.join();
-		}
-		System.out.println("Object Count::" + object.getCount());
 		
 	}
 	

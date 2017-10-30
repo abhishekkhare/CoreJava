@@ -30,7 +30,7 @@ public class FailSafeIterator {
 		public void run() {
 			for (int i = 0; i < 100; i++) {
 				try {
-					Thread.currentThread().sleep(100);
+					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -46,7 +46,7 @@ public class FailSafeIterator {
 					.hasNext();) {
 				System.out.println(iterator.next());
 				try {
-					Thread.currentThread().sleep(500);
+					Thread.sleep(500);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -55,5 +55,4 @@ public class FailSafeIterator {
 		}
 
 	}
-
 }

@@ -11,17 +11,17 @@ import java.util.concurrent.Exchanger;
  */
 public class ExchangerRunnable implements Runnable {
 
-	Exchanger<Object> exchanger = null;
-	Object object = null;
+	Exchanger<String> exchanger = null;
+	String object = null;
 
-	public ExchangerRunnable(Exchanger<Object> exchanger, Object object) {
+	public ExchangerRunnable(Exchanger<String> exchanger, String object) {
 		this.exchanger = exchanger;
 		this.object = object;
 	}
 
 	public void run() {
 		try {
-			Object previous = this.object;
+			String previous = this.object;
 
 			this.object = this.exchanger.exchange(this.object);
 
@@ -33,7 +33,7 @@ public class ExchangerRunnable implements Runnable {
 
 	public static void main(String args[]) {
 		System.out.println("Start");
-		Exchanger<Object> exchanger = new Exchanger<Object>();
+		Exchanger<String> exchanger = new Exchanger<String>();
 
 		ExchangerRunnable exchangerRunnable1 = new ExchangerRunnable(exchanger, "A");
 

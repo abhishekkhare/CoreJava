@@ -12,8 +12,8 @@ import java.util.concurrent.CountDownLatch;
 public class CountDownLatchDemo {
 
 	public static void main(String args[]) {
-		//example1();
-		example2();
+		example1();
+		//example2();
 
 	}
 	
@@ -36,8 +36,8 @@ public class CountDownLatchDemo {
 	static void example1(){
 		final CountDownLatch latch = new CountDownLatch(3);
 		Thread cacheService = new Thread(new Service("CacheService", 1000,latch));
-		Thread alertService = new Thread(new Service("AlertService", 1000,latch));
-		Thread validationService = new Thread(new Service("ValidationService",1000, latch));
+		Thread alertService = new Thread(new Service("AlertService", 2000,latch));
+		Thread validationService = new Thread(new Service("ValidationService",3000, latch));
 
 		cacheService.start(); // separate thread will initialize CacheService
 		alertService.start(); // another thread for AlertService initialization
@@ -59,6 +59,7 @@ public class CountDownLatchDemo {
 		
 		
 		try {
+			System.out.println("Waiting for Countdown to complete!!!");
 			latch.await(); // main thread is waiting on CountDownLatch to finish
 			System.out.println("All services are up, Application is starting now");
 		} catch (InterruptedException ie) {

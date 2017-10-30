@@ -13,16 +13,19 @@ public class MultiTaskExecutor {
 	public static void main(String[] args) {
 		BlockingQueue<Runnable> worksQueue = new ArrayBlockingQueue<Runnable>(10);
 		RejectedExecutionHandler rejectionHandler = new RejectedExecutionHandelerImpl();
-		ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 3, 10, TimeUnit.SECONDS, worksQueue, rejectionHandler);
+		ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 1, 10, TimeUnit.MILLISECONDS, worksQueue, rejectionHandler);
 
 		executor.prestartAllCoreThreads();
 
+		System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
 		List<Runnable> taskGroup = new ArrayList<Runnable>();
 		taskGroup.add(new TestOne());
 		taskGroup.add(new TestTwo());
 		taskGroup.add(new TestThree());
 
 		worksQueue.add(new MultiRunnable(taskGroup));
+		executor.shutdown();
+		System.out.println("Done with Main");
 	}
 }
 

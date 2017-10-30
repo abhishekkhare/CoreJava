@@ -6,7 +6,7 @@ import java.util.List;
 public class BlockingQueueA {
 
 	private List<Object> queue = new LinkedList<Object>();
-	private int limit = 10;
+	private int limit = 5;
 
 	public BlockingQueueA(int limit) {
 		this.limit = limit;
@@ -43,7 +43,7 @@ public class BlockingQueueA {
 	}
 
 	public static void main(String [] args){
-		BlockingQueueA b = new BlockingQueueA(10);
+		BlockingQueueA b = new BlockingQueueA(5);
 		for (int i = 0; i < 20; i++) {
 			EnqueueRunnable e = new EnqueueRunnable(b,""+i);
 			DqueueRunnable d = new DqueueRunnable(b);
@@ -84,7 +84,7 @@ class DqueueRunnable implements Runnable{
 	@Override
 	public void run() {
 		try {
-			//Thread.sleep(10);
+			Thread.sleep(100);
 			b.dequeue();
 		} catch (InterruptedException e) {
 			e.printStackTrace();

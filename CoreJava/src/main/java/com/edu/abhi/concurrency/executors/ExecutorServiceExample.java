@@ -36,7 +36,7 @@ import java.util.concurrent.Future;
 public class ExecutorServiceExample {
 
 	public static void main(String args[]) throws InterruptedException, ExecutionException {
-		 //execute();
+		//execute();
 		 //submit();//Submit Runnable
 		//submitC();//Submit Callable
 		//invokeAny();
@@ -223,6 +223,11 @@ final class Task implements Runnable {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		if (this.taskId == 97){
+			System.out.println("GOING TO THROW EXCEPTION FOR 97");
+			throw new RuntimeException("Sending Exception");
+		}
+			
 	}
 
 }
