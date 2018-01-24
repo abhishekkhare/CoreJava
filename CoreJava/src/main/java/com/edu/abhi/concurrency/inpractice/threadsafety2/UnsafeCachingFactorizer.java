@@ -1,10 +1,10 @@
 package com.edu.abhi.concurrency.inpractice.threadsafety2;
 
+import com.edu.abhi.concurrency.inpractice.annotations.NotThreadSafe;
+
 import java.math.BigInteger;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicReference;
-
-import com.edu.abhi.concurrency.inpractice.annotations.NotThreadSafe;
 
 
 @NotThreadSafe

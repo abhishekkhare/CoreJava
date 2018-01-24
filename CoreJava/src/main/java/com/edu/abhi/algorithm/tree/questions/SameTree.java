@@ -1,9 +1,9 @@
 package com.edu.abhi.algorithm.tree.questions;
 
-import java.util.List;
-
 import com.edu.abhi.algorithm.tree.GenerateTree;
 import com.edu.abhi.algorithm.tree.TreeNode;
+
+import java.util.List;
 
 /**
  * Given two binary trees, write a function to check if they are equal or not.

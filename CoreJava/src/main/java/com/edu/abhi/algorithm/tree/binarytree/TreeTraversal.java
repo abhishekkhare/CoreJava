@@ -1,10 +1,10 @@
 package com.edu.abhi.algorithm.tree.binarytree;
 
+import com.edu.abhi.algorithm.tree.GenerateTree;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
-
-import com.edu.abhi.algorithm.tree.GenerateTree;
 
 /**
  * 

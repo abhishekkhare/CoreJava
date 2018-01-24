@@ -1,8 +1,8 @@
 package com.edu.abhi.algorithm.tree.questions;
 
-import java.util.Stack;
-
 import com.edu.abhi.algorithm.tree.binarytree.BinaryTreeNode;
+
+import java.util.Stack;
 
 /**
  * Given two non-empty binary trees s and t, check whether tree t has exactly

@@ -1,8 +1,8 @@
 package com.edu.abhi.question;
 
-import java.io.*;
-import java.util.*;
-import java.util.stream.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 class Solution {
 

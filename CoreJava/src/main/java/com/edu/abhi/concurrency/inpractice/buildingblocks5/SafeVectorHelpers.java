@@ -1,8 +1,8 @@
 package com.edu.abhi.concurrency.inpractice.buildingblocks5;
 
-import java.util.Vector;
-
 import com.edu.abhi.concurrency.inpractice.annotations.ThreadSafe;
+
+import java.util.Vector;
 
 @ThreadSafe
 public class SafeVectorHelpers {

@@ -1,9 +1,9 @@
 package com.edu.abhi.algorithm.tree.questions;
 
+import com.edu.abhi.algorithm.tree.binarytree.BinaryTreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.edu.abhi.algorithm.tree.binarytree.BinaryTreeNode;
 
 /**
  * This algorithm is very important, since a lot of questions can be solved if you can find the binary tree path. 

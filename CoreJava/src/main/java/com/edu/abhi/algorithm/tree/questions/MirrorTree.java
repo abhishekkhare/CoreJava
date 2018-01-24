@@ -1,11 +1,11 @@
 package com.edu.abhi.algorithm.tree.questions;
 
+import com.edu.abhi.algorithm.tree.GenerateTree;
+import com.edu.abhi.algorithm.tree.binarytree.BinaryTreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
-
-import com.edu.abhi.algorithm.tree.GenerateTree;
-import com.edu.abhi.algorithm.tree.binarytree.BinaryTreeNode;
 
 /**
  * Given a binary tree, check whether it is a mirror of itself (ie, symmetric

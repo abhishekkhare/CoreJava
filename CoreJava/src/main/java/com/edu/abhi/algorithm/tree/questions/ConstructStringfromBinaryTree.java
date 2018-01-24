@@ -1,8 +1,8 @@
 package com.edu.abhi.algorithm.tree.questions;
 
-import java.util.Stack;
-
 import com.edu.abhi.algorithm.tree.binarytree.BinaryTreeNode;
+
+import java.util.Stack;
 
 /**
  * You need to construct a string consists of parenthesis and integers from a

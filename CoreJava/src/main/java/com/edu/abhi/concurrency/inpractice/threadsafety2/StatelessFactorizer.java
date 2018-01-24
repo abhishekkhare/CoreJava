@@ -1,9 +1,9 @@
 package com.edu.abhi.concurrency.inpractice.threadsafety2;
 
+import com.edu.abhi.concurrency.inpractice.annotations.ThreadSafe;
+
 import java.math.BigInteger;
 import java.util.Random;
-
-import com.edu.abhi.concurrency.inpractice.annotations.ThreadSafe;
 @ThreadSafe
 public class StatelessFactorizer implements Runnable{
 	public void service(BigInteger i) {

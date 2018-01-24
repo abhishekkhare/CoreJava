@@ -1,11 +1,11 @@
 package com.edu.abhi.concurrency.inpractice.composingobjects4;
 
+import com.edu.abhi.concurrency.inpractice.annotations.ThreadSafe;
+
 import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-
-import com.edu.abhi.concurrency.inpractice.annotations.ThreadSafe;
 
 @ThreadSafe
 public class VisualComponent {

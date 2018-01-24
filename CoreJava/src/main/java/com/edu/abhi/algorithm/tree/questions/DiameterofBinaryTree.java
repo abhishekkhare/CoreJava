@@ -1,10 +1,10 @@
 package com.edu.abhi.algorithm.tree.questions;
 
+import com.edu.abhi.algorithm.tree.binarytree.BinaryTreeNode;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-
-import com.edu.abhi.algorithm.tree.binarytree.BinaryTreeNode;
 
 /**
  * Given a binary tree, you need to compute the length of the diameter of the

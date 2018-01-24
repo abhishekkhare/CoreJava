@@ -1,6 +1,7 @@
 package com.edu.abhi.regularexpressions;
 
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class RegularExp {
 	static String longString = " Derek  Banas  CA 12345  PA  AK (412)555-1212 johnsmith@hotmail.com 412-555-1234 412 555-1234 1-408-323-9822 Cd  Cc  CC  dd  df ";

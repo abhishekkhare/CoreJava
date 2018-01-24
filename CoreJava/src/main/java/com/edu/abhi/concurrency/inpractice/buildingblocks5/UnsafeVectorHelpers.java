@@ -1,8 +1,8 @@
 package com.edu.abhi.concurrency.inpractice.buildingblocks5;
 
-import java.util.Vector;
-
 import com.edu.abhi.concurrency.inpractice.annotations.NotThreadSafe;
+
+import java.util.Vector;
 
 @NotThreadSafe
 public class UnsafeVectorHelpers {

@@ -1,10 +1,6 @@
 package com.edu.abhi.fileio;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class WriteFileDemo {
 	public static void main(String[] args) throws IOException {

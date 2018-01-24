@@ -1,11 +1,11 @@
 package com.edu.abhi.concurrency.inpractice.sharingobjects3;
 
+import jdk.nashorn.internal.ir.annotations.Immutable;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.Vector;
-
-import jdk.nashorn.internal.ir.annotations.Immutable;
 
 @Immutable
 public final class ThreeStooges {

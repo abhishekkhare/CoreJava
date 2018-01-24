@@ -1,11 +1,6 @@
 package com.edu.abhi.concurrency.inpractice.sharingobjects3;
 
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Animals {
 	Ark ark;

@@ -1,8 +1,8 @@
 package com.edu.abhi.algorithm.sort.questions;
 
-import java.util.Arrays;
-
 import com.edu.abhi.algorithm.AlgoBase;
+
+import java.util.Arrays;
 
 public class Q1 extends AlgoBase {
 	public Q1(int i) {

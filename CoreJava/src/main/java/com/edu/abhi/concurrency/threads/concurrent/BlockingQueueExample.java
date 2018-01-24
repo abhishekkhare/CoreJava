@@ -1,10 +1,10 @@
 package com.edu.abhi.concurrency.threads.concurrent;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-
 import com.edu.abhi.concurrency.Consumer;
 import com.edu.abhi.concurrency.Producer;
+
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 
 public class BlockingQueueExample {
 

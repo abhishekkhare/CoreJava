@@ -1,11 +1,11 @@
 package com.edu.abhi.concurrency.inpractice.buildingblocks5;
 
+import com.edu.abhi.concurrency.inpractice.annotations.GuardedBy;
+import com.edu.abhi.concurrency.inpractice.annotations.NotThreadSafe;
+
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
-
-import com.edu.abhi.concurrency.inpractice.annotations.GuardedBy;
-import com.edu.abhi.concurrency.inpractice.annotations.NotThreadSafe;
 
 @NotThreadSafe
 public class HiddenIterator {

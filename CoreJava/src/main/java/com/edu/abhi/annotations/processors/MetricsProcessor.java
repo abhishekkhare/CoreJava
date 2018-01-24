@@ -1,7 +1,6 @@
 package com.edu.abhi.annotations.processors;
 
-import java.lang.reflect.Method;
-import java.util.Set;
+import com.edu.abhi.annotations.Metrics;
 
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.RoundEnvironment;
@@ -11,8 +10,8 @@ import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.tools.Diagnostic;
-
-import com.edu.abhi.annotations.Metrics;
+import java.lang.reflect.Method;
+import java.util.Set;
 
 @SupportedAnnotationTypes("com.edu.abhi.annotations.Metrics")
 @SupportedSourceVersion(SourceVersion.RELEASE_6)

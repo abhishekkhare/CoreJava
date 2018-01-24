@@ -1,10 +1,10 @@
 package com.edu.abhi.algorithm.tree.questions;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.edu.abhi.algorithm.tree.GenerateTree;
 import com.edu.abhi.algorithm.tree.TreeNode;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Given a binary tree, find its minimum depth.

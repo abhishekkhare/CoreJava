@@ -1,11 +1,11 @@
 package com.edu.abhi.concurrency.inpractice.composingobjects4;
 
+import com.edu.abhi.concurrency.inpractice.annotations.NotThreadSafe;
+import com.edu.abhi.concurrency.inpractice.annotations.ThreadSafe;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import com.edu.abhi.concurrency.inpractice.annotations.NotThreadSafe;
-import com.edu.abhi.concurrency.inpractice.annotations.ThreadSafe;
 
 @NotThreadSafe
 class BadListHelper <E> {

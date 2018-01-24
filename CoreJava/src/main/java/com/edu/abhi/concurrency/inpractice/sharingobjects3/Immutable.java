@@ -1,7 +1,6 @@
 package com.edu.abhi.concurrency.inpractice.sharingobjects3;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Immutable {

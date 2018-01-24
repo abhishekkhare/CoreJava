@@ -1,8 +1,8 @@
 package com.edu.abhi.concurrency.inpractice.composingobjects4;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 import com.edu.abhi.concurrency.inpractice.annotations.NotThreadSafe;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 @NotThreadSafe
 public class NumberRange {

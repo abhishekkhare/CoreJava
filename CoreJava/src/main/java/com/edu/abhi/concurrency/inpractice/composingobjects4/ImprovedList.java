@@ -1,11 +1,11 @@
 package com.edu.abhi.concurrency.inpractice.composingobjects4;
 
+import com.edu.abhi.concurrency.inpractice.annotations.ThreadSafe;
+
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
-
-import com.edu.abhi.concurrency.inpractice.annotations.ThreadSafe;
 
 @ThreadSafe
 public class ImprovedList<T> implements List<T> {

@@ -1,8 +1,8 @@
 package com.edu.abhi.algorithm.search;
 
-import java.util.Arrays;
-
 import com.edu.abhi.algorithm.AlgoBase;
+
+import java.util.Arrays;
 
 /**
  * @author abhishekkhare

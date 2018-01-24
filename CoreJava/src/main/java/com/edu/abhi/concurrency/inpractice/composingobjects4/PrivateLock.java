@@ -1,9 +1,8 @@
 package com.edu.abhi.concurrency.inpractice.composingobjects4;
 
+import apple.laf.JRSUIConstants.Widget;
 import com.edu.abhi.concurrency.inpractice.annotations.GuardedBy;
 import com.edu.abhi.concurrency.inpractice.annotations.ThreadSafe;
-
-import apple.laf.JRSUIConstants.Widget;
 
 @ThreadSafe
 public class PrivateLock {

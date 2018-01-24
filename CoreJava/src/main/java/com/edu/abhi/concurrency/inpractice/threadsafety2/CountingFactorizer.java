@@ -1,8 +1,8 @@
 package com.edu.abhi.concurrency.inpractice.threadsafety2;
 
-import java.util.concurrent.atomic.AtomicLong;
-
 import com.edu.abhi.concurrency.inpractice.annotations.ThreadSafe;
+
+import java.util.concurrent.atomic.AtomicLong;
 
 @ThreadSafe
 public class CountingFactorizer{

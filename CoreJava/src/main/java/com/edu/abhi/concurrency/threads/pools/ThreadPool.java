@@ -1,9 +1,9 @@
 package com.edu.abhi.concurrency.threads.pools;
 
+import com.edu.abhi.concurrency.threads.blockingQueue.BlockingQueueA;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.edu.abhi.concurrency.threads.blockingQueue.BlockingQueueA;
 
 public class ThreadPool {
 

@@ -1,10 +1,6 @@
 package com.edu.abhi.Generics;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 /**
  * 
  * T – used to denote type

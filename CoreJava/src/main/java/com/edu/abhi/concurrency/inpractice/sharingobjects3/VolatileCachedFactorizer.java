@@ -1,10 +1,9 @@
 package com.edu.abhi.concurrency.inpractice.sharingobjects3;
 
-import java.math.BigInteger;
+import com.edu.abhi.concurrency.inpractice.annotations.ThreadSafe;
 
 import javax.servlet.ServletRequest;
-
-import com.edu.abhi.concurrency.inpractice.annotations.ThreadSafe;
+import java.math.BigInteger;
 
 @ThreadSafe
 public class VolatileCachedFactorizer {

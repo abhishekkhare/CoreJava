@@ -1,9 +1,9 @@
 package com.edu.abhi.algorithm.tree.questions;
 
+import com.edu.abhi.algorithm.tree.binarytree.BinaryTreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.edu.abhi.algorithm.tree.binarytree.BinaryTreeNode;
 
 /**
  * You are given a binary tree in which each node contains an integer value.
