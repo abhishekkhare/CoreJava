@@ -1,28 +1,33 @@
-package com.edu.abhi.concurrency.executors;
+package com.edu.abhi.concurrency.executors.callables;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
-public class InvokeAnyExecutorCallableSample {
+public class InvokeAllExecutorCallableSample {
 
 	public static void main(String[] args) throws InterruptedException {
 		ExecutorService executor = Executors.newWorkStealingPool();
+		List<Future<String>> list =  new ArrayList<Future<String>>();
 		List<Callable<String>> callables = new ArrayList<Callable<String>>();
 		for (int i = 0; i < 10; i++) {
-			CallableTask3 task = new CallableTask3(i+"");
+			CallableTask2 task = new CallableTask2(i+"");
 			callables.add(task);			
 		}
 		
 		
-		try {
-			String temp = executor.invokeAny(callables);
-			System.out.println(temp);
-		} catch (ExecutionException e1) {
-			e1.printStackTrace();
+		list = executor.invokeAll(callables);
+		
+		for (Future<String> future : list) {
+			while(!future.isDone()){
+				Thread.sleep(1000);
+			}
+			
+			try {
+				System.out.println("Future::" +future.get());
+			} catch (ExecutionException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		System.out.println("Done with Main");
@@ -30,9 +35,9 @@ public class InvokeAnyExecutorCallableSample {
 	}
 }
 
-class CallableTask3 implements Callable<String> {
+class CallableTask2 implements Callable<String> {
 	private String name;
-	CallableTask3(String name){
+	CallableTask2(String name){
 		this.name =name;
 	}
 
